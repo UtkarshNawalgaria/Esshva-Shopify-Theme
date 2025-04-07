@@ -4,8 +4,8 @@
 body.sticky.transparent.overflow-hidden:not(.sticky-active) {
 	overflow: visible !important
 }
-.btn-check:checked + .btn, 
-.btn.active, 
+.btn-check:checked + .btn,
+.btn.active,
 .btn:first-child:active,
 :not(.btn-check) + .btn:active {
     border-color: initial;
@@ -712,8 +712,7 @@ header .navbar-right>div:first-child {
 .store-usp .usp-text p:last-child,
 .testimonial-slider .section-heading,
 .title-style-3 .section-heading,
-.video-with-text .banner-right .banner-content ul li:last-child,
-[data-license-popup-success].welcome-popup-main .popup-inner .welcome-popup-box p:last-child {
+.video-with-text .banner-right .banner-content ul li:last-child {
 	margin-bottom: 0
 }
 
@@ -3507,12 +3506,12 @@ ul.gutter-extra-large li.grid-item.grid-item-double .res-image {
 
 .announcement-bar a,
 .shop-simple .product-box .spr-badge-starrating .spr-icon {
-	font-size: var(--font_size_minus4);	
+	font-size: var(--font_size_minus4);
 }
 
 .shop-flat .product-box .spr-badge-starrating .spr-icon {
 	font-size: var(--font_size_minus5);
-	margin-right: 1px;	
+	margin-right: 1px;
 }
 .shop-flat .product-box .spr-badge-starrating .spr-icon:last-child {
 	margin-right: 0;
@@ -5895,7 +5894,7 @@ ul.gutter-extra-large li.grid-item.grid-item-double .res-image {
 	border-radius: 5px
 }
 
-.shop-clean .product-box .box-inner:hover .product-image img { 
+.shop-clean .product-box .box-inner:hover .product-image img {
 	-webkit-filter: blur(3px);
 	filter: blur(3px);
 	transform: scale(1.1)
@@ -6240,7 +6239,7 @@ ul.gutter-extra-large li.grid-item.grid-item-double .res-image {
 
 .shop-box .product-box .product-footer .price-box .price-item.regular-price,
 .shop-box .product-box .product-footer .price-box .price-item.special-price,
-.top-banner-with-product .product-box .special-price, 
+.top-banner-with-product .product-box .special-price,
 .top-banner-with-product .product-box .regular-price {
 	font-size: var(--font_size_plus4);
 	color: var(--base-color);
@@ -8171,7 +8170,7 @@ button.plyr__control.plyr__control--overlaid {
 	width: 35px;
 	height: 35px;
 	right: 0;
-	top: 0;	
+	top: 0;
 	text-align: center;
 	cursor: pointer
 }
@@ -10852,7 +10851,7 @@ footer.style-3 .swiper .swiper-wrapper {
 	margin-left: 30px;
 }
 .hero-banner .image-wrap > div {
-	margin-right: -10vw; 
+	margin-right: -10vw;
 }
 .hero-banner .rating-inner {
 	font-size: var(--font_size_minus4);
@@ -10973,7 +10972,7 @@ footer.style-3 .swiper .swiper-wrapper {
 }
 .custom-social-block .custom-social-title span {
 	font-weight: var(--font-weight-600);
-	border-bottom: 2px solid var(--base-color);	
+	border-bottom: 2px solid var(--base-color);
 }
 .custom-social-block .separator {
 	opacity: .40;
@@ -11374,20 +11373,6 @@ footer.style-3 .swiper .swiper-wrapper {
 	color: var(--dark-color)
 }
 
-[data-license-popup-success].welcome-popup-main .popup-inner .welcome-popup-box {
-	text-align: center;
-	min-height: 550px;
-	display: flex;
-	justify-content: center;
-	flex-direction: column
-}
-
-[data-license-popup-success].welcome-popup-main .popup-inner .welcome-popup-box p {
-	margin-left: auto;
-	margin-right: auto;
-	width: 60%
-}
-
 .welcome-popup-main .popup-inner .welcome-popup-box i {
 	font-size: 110px;
 	color: var(--dark-color);
@@ -11543,7 +11528,7 @@ footer.style-3 .swiper .swiper-wrapper {
 .theme-demos.active .all-demo .theme-wrapper,
 .theme-demos.active .buy-theme .theme-wrapper {
 	opacity: 0;
-	transition-delay: 0s 
+	transition-delay: 0s
 }
 
 .theme-demos .demos-wrapper::-webkit-scrollbar {
