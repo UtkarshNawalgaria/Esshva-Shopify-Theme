@@ -47,11 +47,13 @@
           {%- endif -%}
         </div>
       {%- endif -%}
+      {% if section.settings.show_image %}
         <div class="col-lg-{{ section.settings.image_column_width }} text-center">
           <div class="form-bg">
             {%- render 'responsive-image', image: section.settings.form_bg, placeholder_type: 'simple-image' -%}
           </div>
         </div>
+      {% endif %}
       <div class="col-lg-{{ section.settings.content_column_width }} form-content">
         <div class="form-wrap">
           <div class="contact">
@@ -264,6 +266,12 @@
       "type": "checkbox",
       "id": "show_social_icon",
       "label": "Show social icon",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "label": "Show Image",
       "default": true
     },
     {

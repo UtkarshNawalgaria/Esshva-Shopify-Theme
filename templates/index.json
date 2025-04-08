@@ -15,7 +15,27 @@
         "84f63979-a6cd-4e4a-a874-2406bbae5b6c": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Esshva_Banner.png",
+            "image": "shopify://shop_images/Home_Page_Banner_1.webp",
+            "title": "",
+            "subtitle": "",
+            "description": "",
+            "txt_alignment": "left",
+            "box_alignment": "justify-content-start align-items-center",
+            "button_style": "btn-white-border border-opacity",
+            "button_size": "btn-large",
+            "btn_radius": 4,
+            "btn_border_width": 1,
+            "btn_icon_class": "feather-arrow-right",
+            "icon_position": "right-icon",
+            "btn_text": "",
+            "btn_link": "shopify://collections/women"
+          }
+        },
+        "item_wGq8nc": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Home_Page_Banner_2.webp",
+            "mobile_image": "shopify://shop_images/Website_Banner_Mobile_1.png",
             "title": "",
             "subtitle": "",
             "description": "",
@@ -33,16 +53,17 @@
         }
       },
       "block_order": [
-        "84f63979-a6cd-4e4a-a874-2406bbae5b6c"
+        "84f63979-a6cd-4e4a-a874-2406bbae5b6c",
+        "item_wGq8nc"
       ],
       "settings": {
         "container_type": "w-100",
         "show_content_container": true,
-        "full_height": true,
+        "full_height": false,
         "custom_height_desktop": 700,
         "custom_height_mini_desktop": 200,
         "custom_height_ipad": 380,
-        "custom_height_mobile": 260,
+        "custom_height_mobile": 450,
         "column_width": "9",
         "show_magic_cursor": false,
         "magic_cursor_color_scheme": "base",
@@ -52,10 +73,10 @@
         "direction": "horizontal",
         "show_parallax": true,
         "mousewheel_control": true,
-        "pagination": true,
+        "pagination": false,
         "pagination_mobile": true,
-        "pagination_style": "swiper-dots-pagination",
-        "pagination_color": "#ffffff",
+        "pagination_style": "swiper-line-pagination",
+        "pagination_color": "#262626",
         "navigation": true,
         "navigation_mobile": false,
         "navigation_style": "arrow",
@@ -71,7 +92,7 @@
         "loop": true,
         "touch_move": true,
         "desktop_overlay": false,
-        "mobile_overlay": true,
+        "mobile_overlay": false,
         "overlay_color": "#262626",
         "overlay_opacity": "0.5",
         "z_index": "",
@@ -84,6 +105,86 @@
         "title_color": "#ffffff",
         "subtitle_color": "#9ca09f",
         "description_color": "",
+        "section_id": "",
+        "section_class_name": ""
+      }
+    },
+    "collection_list_ACnQwg": {
+      "type": "collection-list",
+      "blocks": {
+        "list_nwyene": {
+          "type": "list",
+          "settings": {
+            "collection_list": "cotton"
+          }
+        },
+        "list_NxxmPJ": {
+          "type": "list",
+          "settings": {
+            "collection_list": "organza"
+          }
+        },
+        "list_z37Yxf": {
+          "type": "list",
+          "settings": {
+            "collection_list": "chinon"
+          }
+        },
+        "list_qfw7a6": {
+          "type": "list",
+          "settings": {
+            "collection_list": "chiffon"
+          }
+        },
+        "list_xXaVtw": {
+          "type": "list",
+          "settings": {
+            "collection_list": "georgette"
+          }
+        },
+        "list_BQJyiW": {
+          "type": "list",
+          "settings": {
+            "collection_list": "satin"
+          }
+        }
+      },
+      "block_order": [
+        "list_nwyene",
+        "list_NxxmPJ",
+        "list_z37Yxf",
+        "list_qfw7a6",
+        "list_xXaVtw",
+        "list_BQJyiW"
+      ],
+      "settings": {
+        "container_type": "container-fluid",
+        "heading": "Shop Fabrics",
+        "sub_heading": "",
+        "description": "",
+        "title_style": "style-1",
+        "slide_per_view_desktop": 4,
+        "slide_per_view_mini_desktop": 4,
+        "slide_per_view_tablet": 3,
+        "slide_per_view_mobile": 2,
+        "space_slide": 15,
+        "show_magic_cursor": false,
+        "magic_cursor_color_scheme": "base",
+        "use_default_section_typography": true,
+        "section_heading_size": 45,
+        "heading_line_height": 55,
+        "sub_heading_size": 24,
+        "sub_heading_line_height": 30,
+        "subheading_letter_spacing": 0,
+        "padding_top": "small-section-top",
+        "padding_bottom": "small-section-bottom",
+        "heading_alignment": "center",
+        "section_show": true,
+        "section_bg_color": "",
+        "section_gradient": "",
+        "section_heading_color": "",
+        "section_sub_heading_color": "",
+        "section_description_color": "",
         "section_id": "",
         "section_class_name": ""
       }
@@ -384,6 +485,7 @@
   },
   "order": [
     "slideshow",
+    "collection_list_ACnQwg",
     "shop_banner_3_J7pMQ7",
     "1630664853e697c287",
     "16275581504177c98e",
