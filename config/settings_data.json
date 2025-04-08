@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "scroll_to_top": true,
@@ -5,20 +14,26 @@
     "enable_catalog_mode": false,
     "favicon": "shopify://shop_images/favicon.png",
     "favicon_ratina": "shopify://shop_images/favicon-ratina.png",
-    "container_width": 1170,
+    "container_width": 1440,
     "container_max_width": 1680,
     "enable_box_layout": false,
     "header_layout": "style-1",
+    "header_style": "center-navigation",
+    "show_alt_font": false,
     "fixed_header_enable": true,
     "fixed_header_type": "reverse-fixed",
-    "logo": "shopify://shop_images/logo-black_2x_c25104f2-2ef7-403a-832f-c1f23c47fe88.png",
+    "logo_text": "Esshva Fashion",
+    "logo": "shopify://shop_images/esshva-logo-new.jpg",
+    "logo_max_width": 140,
     "logo_max_width_mobile": 105,
-    "menu_font_size": 18,
+    "menu_bg_color": "#fff1e3",
+    "menu_text_color": "#9b6e2b",
+    "menu_font_size": 20,
     "label_font_size": 17,
     "label_line_height": 22,
     "mm_line_height": 30,
     "wishlist_page": "wishlist",
-    "show_icon": false,
+    "show_icon": true,
     "link_hover_color": "#262626",
     "show_vertical_menu": false,
     "mobile_number_text": "Need help",
@@ -58,8 +73,8 @@
     "text_lable5": "Popular",
     "color_lable5": "#fff",
     "bg_color_lable5": "#f5a811",
-    "enable_popup_newsletter": true,
-    "enable_newsletter_design_mode": true,
+    "enable_popup_newsletter": false,
+    "enable_newsletter_design_mode": false,
     "popup_newsletter_expire": 2,
     "popup_newsletter_delay": 10,
     "popup_img": "shopify://shop_images/newsletter-popup-banner.jpg",
@@ -102,19 +117,21 @@
     "variant_option_parameter_name5": "",
     "variant_option_parameter_name6": "",
     "variant_option_parameter_name7": "",
-    "product_card_style": "shop-standard",
+    "product_card_style": "shop-minimalist",
     "product_image_ratio": "original",
-    "show_variant_option": true,
+    "show_variant_option": false,
     "product_card_variant_option_name": "Color",
     "product_card_variant_option_type": "button",
     "variant_option_item_limit": 4,
     "show_secondary_image": true,
     "show_add_to_cart": true,
-    "show_wishlist": true,
-    "show_compare": true,
-    "show_quickview": true,
-    "show_product_rating": true,
-    "sale_label_type": "text",
+    "show_wishlist": false,
+    "show_compare": false,
+    "show_quickview": false,
+    "show_deal_product": true,
+    "show_product_rating": false,
+    "display_label": true,
+    "sale_label_type": "discount",
     "sale_label_text": "Sale",
     "sold_out_label_text": "Sold",
     "article_card_style": "modern",
@@ -194,261 +211,32 @@
       "header": {
         "type": "header",
         "blocks": {
-          "d5a9dd22-3711-4980-aa91-0535afb2b7f1": {
-            "type": "custom-html",
+          "link_NmEVMf": {
+            "type": "link",
             "settings": {
-              "text": "Demo",
-              "url": "#",
-              "menu_custom_html": "<div class=\"row row-cols-1 row-cols-xl-6 justify-content-center align-items-center text-center demo-listing\">\n\t<div class=\"col main-item\">\n\t\t<div class=\"main-inner\">\n\t\t\t<a class=\"img-wrapper test\" href=\"https://hongotheme.myshopify.com/?preview_theme_id=131176628417\">\n\t\t\t\t<img width=\"300\" height=\"270\" class=\"w-100\" loading=\"lazy\" src=\"https://cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-fashion.jpg?v=1679566952\" srcset=\"https://cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-fashion.jpg?v=1679566952&amp;width=165 165w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-fashion.jpg?v=1679566952&amp;width=360 360w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-fashion.jpg?v=1679566952&amp;width=535 535w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-fashion.jpg?v=1679566952&amp;width=720 720w\" alt=\"\" sizes=\"100vw\"></a>\n\t\t\t<a href=\"https://hongotheme.myshopify.com/?preview_theme_id=131176628417\" class=\"d-block menu-title\">Fashion</a>\n\t\t</div>\n\t</div>\n\t<div class=\"col main-item\">\n\t\t<div class=\"main-inner\">\n\t\t\t<a class=\"img-wrapper\" href=\"https://hongotheme.myshopify.com/?preview_theme_id=131395027137\">\n\t\t\t\t<img width=\"300\" height=\"270\" class=\"w-100\" loading=\"lazy\" src=\"https://cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-jewellery.jpg?v=1679566952\" srcset=\"https://cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-jewellery.jpg?v=1679566952&amp;width=165 165w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-jewellery.jpg?v=1679566952&amp;width=360 360w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-jewellery.jpg?v=1679566952&amp;width=535 535w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-jewellery.jpg?v=1679566952&amp;width=720 720w\" alt=\"\" sizes=\"100vw\"></a>\n\t\t\t<a href=\"https://hongotheme.myshopify.com/?preview_theme_id=131395027137\" class=\"d-block menu-title\">Jewellery</a>\n\t\t</div>\n\t</div>\n\t<div class=\"col main-item\">\n\t\t<div class=\"main-inner\">\n\t\t\t<a class=\"img-wrapper\" href=\"https://hongotheme.myshopify.com/?preview_theme_id=131518890177\">\n\t\t\t\t<img width=\"300\" height=\"270\" class=\"w-100\" loading=\"lazy\" src=\"https://cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-electronic.jpg?v=1679566952\" srcset=\"https://cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-electronic.jpg?v=1679566952&amp;width=165 165w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-electronic.jpg?v=1679566952&amp;width=360 360w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-electronic.jpg?v=1679566952&amp;width=535 535w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-electronic.jpg?v=1679566952&amp;width=720 720w\" alt=\"\" sizes=\"100vw\"></a>\n\t\t\t<a href=\"https://hongotheme.myshopify.com/?preview_theme_id=131518890177\" class=\"d-block menu-title\">Electronic</a>\n\t\t</div>\n\t</div>\t\n\t<div class=\"col main-item\">\n\t\t<div class=\"main-inner\">\n\t\t\t<a class=\"img-wrapper\" href=\"https://hongotheme.myshopify.com/?preview_theme_id=131388899521\">\n\t\t\t<img width=\"300\" height=\"270\" class=\"w-100\" loading=\"lazy\" src=\"https://cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-furniture.jpg?v=1679566952\" srcset=\"https://cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-furniture.jpg?v=1679566952&amp;width=165 165w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-furniture.jpg?v=1679566952&amp;width=360 360w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-furniture.jpg?v=1679566952&amp;width=535 535w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-furniture.jpg?v=1679566952&amp;width=720 720w\" alt=\"\" sizes=\"100vw\"></a>\n\t\t\t<a href=\"https://hongotheme.myshopify.com/?preview_theme_id=131388899521\" class=\"d-block menu-title\">Furniture</a>\n\t\t</div>\n\t</div>\n\t<div class=\"col main-item\">\n\t\t<div class=\"main-inner\">\n\t\t\t<a class=\"img-wrapper\" href=\"https://hongotheme.myshopify.com/?preview_theme_id=132393566401\">\n\t\t\t\t<img width=\"300\" height=\"270\" class=\"w-100\" loading=\"lazy\" src=\"https://cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-lifestyle.jpg?v=1679566952\" srcset=\"https://cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-lifestyle.jpg?v=1679566952&amp;width=165 165w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-lifestyle.jpg?v=1679566952&amp;width=360 360w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-lifestyle.jpg?v=1679566952&amp;width=535 535w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-lifestyle.jpg?v=1679566952&amp;width=720 720w\" alt=\"\" sizes=\"100vw\"></a>\n\t\t\t<a href=\"https://hongotheme.myshopify.com/?preview_theme_id=132393566401\" class=\"d-block menu-title\">Lifestyle</a>\n\t\t</div>\n\t</div>\t\n\t<div class=\"col main-item\">\n\t\t<div class=\"main-inner\">\n\t\t\t<a class=\"img-wrapper\" href=\"https://hongotheme.myshopify.com/?preview_theme_id=131518824641\">\n\t\t\t\t<img width=\"300\" height=\"270\" class=\"w-100\" loading=\"lazy\" src=\"https://cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-decor.jpg?v=1679566952\" srcset=\"https://cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-decor.jpg?v=1679566952&amp;width=165 165w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-decor.jpg?v=1679566952&amp;width=360 360w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-decor.jpg?v=1679566952&amp;width=535 535w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-decor.jpg?v=1679566952&amp;width=720 720w\" alt=\"\" sizes=\"100vw\"></a>\n\t\t\t<a href=\"https://hongotheme.myshopify.com/?preview_theme_id=131518824641\" class=\"d-block menu-title\">Decor</a>\n\t\t</div>\n\t</div>\n\t<div class=\"col main-item\">\n\t\t<div class=\"main-inner\">\n\t\t\t<a class=\"img-wrapper\" href=\"https://hongotheme.myshopify.com/?preview_theme_id=133084774593\">\n\t\t\t\t<img width=\"300\" height=\"270\" class=\"w-100\" loading=\"lazy\" src=\"https://cdn.shopify.com/s/files/1/0770/8701/5196/files/demo-glasses.jpg?v=1687496828\" srcset=\"https://cdn.shopify.com/s/files/1/0770/8701/5196/files/demo-glasses.jpg?v=1687496828&amp;width=165 165w, //cdn.shopify.com/s/files/1/0770/8701/5196/files/demo-glasses.jpg?v=1687496828&amp;width=360 360w, //cdn.shopify.com/s/files/1/0770/8701/5196/files/demo-glasses.jpg?v=1687496828&amp;width=535 535w, //cdn.shopify.com/s/files/1/0770/8701/5196/files/demo-glasses.jpg?v=1687496828&amp;width=720 720w\" alt=\"\" sizes=\"100vw\"></a>\n\t\t\t<a href=\"https://hongotheme.myshopify.com/?preview_theme_id=133084774593\" class=\"d-block menu-title\">Glasses</a>\n\t\t</div>\n\t</div>\n\t<div class=\"col main-item\">\n\t\t<div class=\"main-inner\">\n\t\t\t<a class=\"img-wrapper\" href=\"https://hongotheme.myshopify.com/?preview_theme_id=131518922945\">\n\t\t\t\t<img width=\"300\" height=\"270\" class=\"w-100\" loading=\"lazy\" src=\"https://cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-watch.jpg?v=1679566952\" srcset=\"https://cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-watch.jpg?v=1679566952&amp;width=165 165w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-watch.jpg?v=1679566952&amp;width=360 360w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-watch.jpg?v=1679566952&amp;width=535 535w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-watch.jpg?v=1679566952&amp;width=720 720w\" alt=\"\" sizes=\"100vw\">\n\t\t\t</a>\n\t\t\t<a href=\"https://hongotheme.myshopify.com/?preview_theme_id=131518922945\" class=\"d-block menu-title\">Watch</a>\n\t\t</div>\n\t</div>\n\t<div class=\"col main-item\">\n\t\t<div class=\"main-inner\">\n\t\t\t<a class=\"img-wrapper\" href=\"https://hongotheme.myshopify.com/?preview_theme_id=132250763457\">\n\t\t\t\t<img width=\"300\" height=\"270\" class=\"w-100\" loading=\"lazy\" src=\"https://cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-shoes.jpg?v=1679566952\" srcset=\"https://cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-shoes.jpg?v=1679566952&amp;width=165 165w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-shoes.jpg?v=1679566952&amp;width=360 360w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-shoes.jpg?v=1679566952&amp;width=535 535w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-shoes.jpg?v=1679566952&amp;width=720 720w\" alt=\"\" sizes=\"100vw\">\n\t\t\t</a>\n\t\t\t<a href=\"https://hongotheme.myshopify.com/?preview_theme_id=132250763457\" class=\"d-block menu-title\">Shoes</a>\n\t\t</div>\n\t</div>\n\t<div class=\"col main-item\">\n\t\t<div class=\"main-inner\">\n\t\t\t<a class=\"img-wrapper\" href=\"https://hongotheme.myshopify.com/?preview_theme_id=161785610433\">\n\t\t\t\t<img width=\"300\" height=\"270\" class=\"w-100\" loading=\"lazy\" src=\"https://cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-pets.jpg?v=1698830594\" srcset=\"https://cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-pets.jpg?v=1698830594&amp;width=165 165w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-pets.jpg?v=1698830594&amp;width=360 360w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-pets.jpg?v=1698830594&amp;width=535 535w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-pets.jpg?v=1698830594&amp;width=720 720w\" alt=\"\" sizes=\"100vw\"></a>\n\t\t\t<a href=\"https://hongotheme.myshopify.com/?preview_theme_id=161785610433\" class=\"d-block menu-title\">Pets</a>\n\t\t</div>\n\t</div>\n\t<div class=\"col main-item\">\n\t\t<div class=\"main-inner\">\n\t\t\t<a class=\"img-wrapper\" href=\"https://hongotheme.myshopify.com/?preview_theme_id=133208408257\">\n\t\t\t\t<img width=\"300\" height=\"270\" class=\"w-100\" loading=\"lazy\" src=\"https://cdn.shopify.com/s/files/1/0770/8701/5196/files/demo-glossary.jpg?v=1690956452\" srcset=\"https://cdn.shopify.com/s/files/1/0770/8701/5196/files/demo-glossary.jpg?v=1690956452&amp;width=165 165w, //cdn.shopify.com/s/files/1/0770/8701/5196/files/demo-glossary.jpg?v=1690956452&amp;width=360 360w, //cdn.shopify.com/s/files/1/0770/8701/5196/files/demo-glossary.jpg?v=1690956452&amp;width=535 535w, //cdn.shopify.com/s/files/1/0770/8701/5196/files/demo-glossary.jpg?v=1690956452&amp;width=720 720w\" alt=\"\" sizes=\"100vw\"></a>\n\t\t\t<a href=\"https://hongotheme.myshopify.com/?preview_theme_id=133208408257\" class=\"d-block menu-title\">Grocery</a>\n\t\t</div>\n\t</div>\n\t<div class=\"col main-item\">\n\t\t<div class=\"main-inner\">\n\t\t\t<a class=\"img-wrapper\" href=\"https://hongotheme.myshopify.com/?preview_theme_id=161785577665\">\n\t\t\t\t<img width=\"300\" height=\"270\" class=\"w-100\" loading=\"lazy\" src=\"https://cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-kids.jpg?v=1698830594\" srcset=\"https://cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-kids.jpg?v=1698830594&amp;width=165 165w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-kids.jpg?v=1698830594&amp;width=360 360w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-kids.jpg?v=1698830594&amp;width=535 535w, //cdn.shopify.com/s/files/1/0524/8555/4369/files/demo-kids.jpg?v=1698830594&amp;width=720 720w\" alt=\"\" sizes=\"100vw\"></a>\n\t\t\t<a href=\"https://hongotheme.myshopify.com/?preview_theme_id=161785577665\" class=\"d-block menu-title\">Kids toy</a>\n\t\t</div>\n\t</div>\n</div>\n<div class=\"row row-cols-1 text-center mt-3 mt-xl-0\">\n\t<div class=\"col\">\n\t\t<a href=\"https://hongoshopify.themezaa.com\" class=\"align-items-center justify-content-center alt-font btn btn-black btn-medium d-inline-flex\" target=\"_blank\">Explore all demos</a>\n\t</div>\n</div>",
-              "megamenu_fullwidth": true
+              "text": "Kurtas",
+              "url": "shopify://collections/kurtas"
             }
           },
-          "8f8be27d-61a9-4b46-b6e8-c6210f57e671": {
-            "type": "megamenu",
+          "link_9qceCm": {
+            "type": "link",
             "settings": {
-              "text": "Shop",
-              "url": "shopify://collections/men",
-              "image_position": "top",
-              "megamenu_fullwidth": false,
-              "column_type1": "menu",
-              "column_width1": "2",
-              "menu1": "fashion-men",
-              "button_style1": "btn-black",
-              "button_size1": "btn-medium",
-              "btn_radius1": 0,
-              "btn_text1": "",
-              "btn_link1": "",
-              "collection1": "",
-              "slider_title1": "lorem ipsum dummy text",
-              "slide_per_view_desktop1": 3,
-              "slide_per_view_mini_desktop1": 1,
-              "slide_per_view_ipad1": 1,
-              "slide_per_view_mobile1": 1,
-              "column_type2": "menu",
-              "column_width2": "2",
-              "menu2": "fashion-women",
-              "button_style2": "btn-black",
-              "button_size2": "btn-medium",
-              "btn_radius2": 0,
-              "btn_text2": "",
-              "btn_link2": "",
-              "collection2": "",
-              "slider_title2": "lorem ipsum dummy text",
-              "slide_per_view_desktop2": 3,
-              "slide_per_view_mini_desktop2": 1,
-              "slide_per_view_ipad2": 1,
-              "slide_per_view_mobile2": 1,
-              "column_type3": "menu",
-              "column_width3": "2",
-              "menu3": "fashion-kids",
-              "button_style3": "btn-black",
-              "button_size3": "btn-medium",
-              "btn_radius3": 0,
-              "btn_text3": "",
-              "btn_link3": "",
-              "collection3": "",
-              "slider_title3": "lorem ipsum dummy text",
-              "slide_per_view_desktop3": 3,
-              "slide_per_view_mini_desktop3": 1,
-              "slide_per_view_ipad3": 1,
-              "slide_per_view_mobile3": 1,
-              "column_type4": "menu",
-              "column_width4": "2",
-              "menu4": "fashion-accessories",
-              "button_style4": "btn-black",
-              "button_size4": "btn-medium",
-              "btn_radius4": 0,
-              "btn_text4": "",
-              "btn_link4": "",
-              "collection4": "",
-              "slider_title4": "lorem ipsum dummy text",
-              "slide_per_view_desktop4": 3,
-              "slide_per_view_mini_desktop4": 1,
-              "slide_per_view_ipad4": 1,
-              "slide_per_view_mobile4": 1,
-              "column_type5": "collection",
-              "column_width5": "4",
-              "menu5": "",
-              "button_style5": "btn-black",
-              "button_size5": "btn-medium",
-              "btn_radius5": 0,
-              "btn_text5": "",
-              "btn_link5": "",
-              "collection5": "shop-menu-slider-collection",
-              "slider_title5": "<i class=\"bi bi-heart-fill\"></i> Products we love",
-              "slide_per_view_desktop5": 2,
-              "slide_per_view_mini_desktop5": 1,
-              "slide_per_view_ipad5": 1,
-              "slide_per_view_mobile5": 1,
-              "column_type6": "menu",
-              "column_width6": "2",
-              "menu6": "",
-              "button_style6": "btn-black",
-              "button_size6": "btn-medium",
-              "btn_radius6": 0,
-              "btn_text6": "",
-              "btn_link6": "",
-              "collection6": "",
-              "slider_title6": "lorem ipsum dummy text",
-              "slide_per_view_desktop6": 3,
-              "slide_per_view_mini_desktop6": 1,
-              "slide_per_view_ipad6": 1,
-              "slide_per_view_mobile6": 1,
-              "show_border_top": false,
-              "bottom_column_width1": "6",
-              "banner_image_bm1": "shopify://shop_images/demo-fashion-menu-banner-01.jpg",
-              "banner_bm_url1": "shopify://collections/kids",
-              "bottom_column_width2": "6",
-              "banner_image_bm2": "shopify://shop_images/demo-fashion-menu-banner-02.jpg",
-              "banner_bm_url2": "shopify://collections/women",
-              "bottom_column_width3": "3",
-              "banner_bm_url3": "shopify://products/abstract-shirt",
-              "bottom_column_width4": "3",
-              "banner_bm_url4": "",
-              "bottom_column_width5": "3",
-              "banner_bm_url5": "",
-              "bottom_column_width6": "3",
-              "banner_bm_url6": ""
+              "text": "Fabrics",
+              "url": "shopify://collections/fabrics"
             }
           },
-          "4b1bd722-8707-4533-8a5d-11d2633070ac": {
-            "type": "collection-menu",
+          "link_qi8nRt": {
+            "type": "link",
             "settings": {
-              "text": "Collections",
-              "url": "shopify://collections",
-              "megamenu_fullwidth": false,
-              "collection_img1": "shopify://shop_images/collections-img-01.jpg",
-              "collection_name1": "Men",
-              "collection_url1": "shopify://collections/men",
-              "collection_img2": "shopify://shop_images/collections-img-02.jpg",
-              "collection_name2": "Kids",
-              "collection_url2": "shopify://collections/kids",
-              "collection_img3": "shopify://shop_images/collections-img-03.jpg",
-              "collection_name3": "Women",
-              "collection_url3": "shopify://collections/women",
-              "collection_img4": "shopify://shop_images/collections-img-04.jpg",
-              "collection_name4": "New arrivals",
-              "collection_url4": "shopify://collections/new-arrivals",
-              "collection_img5": "shopify://shop_images/collections-img-05.jpg",
-              "collection_name5": "Accessories",
-              "collection_url5": "shopify://collections/accessories",
-              "collection_img6": "shopify://shop_images/collections-img-06.jpg",
-              "collection_name6": "Best sellers",
-              "collection_url6": "shopify://collections/best-sellers"
+              "text": "Unstitched Suits",
+              "url": "shopify://collections/unstitched-suits"
             }
-          },
-          "573b1c7a-dd41-47b2-94cd-d84cf445ebb8": {
-            "type": "simple-dropdown",
-            "settings": { "text": "Pages", "url": "#", "simple_menu": "pages" }
           },
           "ef75c4a5-248a-47c1-acc5-cd82f05a6a91": {
             "type": "link",
-            "settings": { "text": "Blog", "url": "shopify://blogs/fashion" }
-          },
-          "15895b1d-8949-4648-8c5a-b6dcedc00a64": {
-            "type": "megamenu",
             "settings": {
-              "text": "Features",
-              "url": "#",
-              "image_position": "top",
-              "megamenu_fullwidth": false,
-              "column_type1": "menu",
-              "column_width1": "3",
-              "menu1": "features-2",
-              "button_style1": "btn-black",
-              "button_size1": "btn-medium",
-              "btn_radius1": 0,
-              "btn_text1": "",
-              "btn_link1": "",
-              "collection1": "",
-              "slider_title1": "lorem ipsum dummy text",
-              "slide_per_view_desktop1": 3,
-              "slide_per_view_mini_desktop1": 1,
-              "slide_per_view_ipad1": 2,
-              "slide_per_view_mobile1": 1,
-              "column_type2": "menu",
-              "column_width2": "3",
-              "menu2": "features-3",
-              "button_style2": "btn-black",
-              "button_size2": "btn-medium",
-              "btn_radius2": 0,
-              "btn_text2": "",
-              "btn_link2": "",
-              "collection2": "",
-              "slider_title2": "lorem ipsum dummy text",
-              "slide_per_view_desktop2": 3,
-              "slide_per_view_mini_desktop2": 1,
-              "slide_per_view_ipad2": 2,
-              "slide_per_view_mobile2": 1,
-              "column_type3": "menu",
-              "column_width3": "3",
-              "menu3": "features-4",
-              "button_style3": "btn-black",
-              "button_size3": "btn-medium",
-              "btn_radius3": 0,
-              "btn_text3": "",
-              "btn_link3": "",
-              "collection3": "",
-              "slider_title3": "lorem ipsum dummy text",
-              "slide_per_view_desktop3": 3,
-              "slide_per_view_mini_desktop3": 1,
-              "slide_per_view_ipad3": 2,
-              "slide_per_view_mobile3": 1,
-              "column_type4": "menu",
-              "column_width4": "3",
-              "menu4": "features-5",
-              "button_style4": "btn-black",
-              "button_size4": "btn-medium",
-              "btn_radius4": 0,
-              "btn_text4": "",
-              "btn_link4": "",
-              "collection4": "",
-              "slider_title4": "lorem ipsum dummy text",
-              "slide_per_view_desktop4": 3,
-              "slide_per_view_mini_desktop4": 1,
-              "slide_per_view_ipad4": 2,
-              "slide_per_view_mobile4": 1,
-              "column_type5": "menu",
-              "column_width5": "3",
-              "menu5": "",
-              "button_style5": "btn-black",
-              "button_size5": "btn-medium",
-              "btn_radius5": 0,
-              "btn_text5": "",
-              "btn_link5": "",
-              "collection5": "",
-              "slider_title5": "lorem ipsum dummy text",
-              "slide_per_view_desktop5": 3,
-              "slide_per_view_mini_desktop5": 1,
-              "slide_per_view_ipad5": 2,
-              "slide_per_view_mobile5": 1,
-              "column_type6": "menu",
-              "column_width6": "3",
-              "menu6": "",
-              "button_style6": "btn-black",
-              "button_size6": "btn-medium",
-              "btn_radius6": 0,
-              "btn_text6": "",
-              "btn_link6": "",
-              "collection6": "",
-              "slider_title6": "lorem ipsum dummy text",
-              "slide_per_view_desktop6": 3,
-              "slide_per_view_mini_desktop6": 1,
-              "slide_per_view_ipad6": 2,
-              "slide_per_view_mobile6": 1,
-              "show_border_top": false,
-              "bottom_column_width1": "3",
-              "banner_bm_url1": "",
-              "bottom_column_width2": "3",
-              "banner_bm_url2": "",
-              "bottom_column_width3": "3",
-              "banner_bm_url3": "",
-              "bottom_column_width4": "3",
-              "banner_bm_url4": "",
-              "bottom_column_width5": "3",
-              "banner_bm_url5": "",
-              "bottom_column_width6": "3",
-              "banner_bm_url6": ""
+              "text": "Blog",
+              "url": "shopify://blogs/fashion"
             }
           },
           "de2d823a-5473-4417-b0eb-6d37267803b2": {
@@ -459,16 +247,17 @@
           },
           "f673085f-a516-4ec6-a999-47767e9a2b13": {
             "type": "language-currency",
-            "settings": { "show_language": true, "show_currency": true }
+            "settings": {
+              "show_language": true,
+              "show_currency": true
+            }
           }
         },
         "block_order": [
-          "d5a9dd22-3711-4980-aa91-0535afb2b7f1",
-          "8f8be27d-61a9-4b46-b6e8-c6210f57e671",
-          "4b1bd722-8707-4533-8a5d-11d2633070ac",
-          "573b1c7a-dd41-47b2-94cd-d84cf445ebb8",
+          "link_NmEVMf",
+          "link_9qceCm",
+          "link_qi8nRt",
           "ef75c4a5-248a-47c1-acc5-cd82f05a6a91",
-          "15895b1d-8949-4648-8c5a-b6dcedc00a64",
           "de2d823a-5473-4417-b0eb-6d37267803b2",
           "f673085f-a516-4ec6-a999-47767e9a2b13"
         ],
@@ -480,47 +269,42 @@
           "000beb47-6ce2-4ea4-97e3-315aec0f39d1": {
             "type": "logowithtext",
             "settings": {
-              "logo": "shopify://shop_images/logo-black_2x_c25104f2-2ef7-403a-832f-c1f23c47fe88.png",
-              "logo_image_width": 105,
-              "content_text": "<p>Lorem ipsum is simply dummy text of the printing and typesetting.</p>",
-              "phone": "+61 3 8376 6284",
-              "email": "info@domain.com",
+              "logo": "shopify://shop_images/esshva-logo-new.jpg",
+              "logo_image_width": 140,
+              "content_text": "Shop No. 3 & 24, Real Tech Park, 39/2, Bhagwan Mahaveer Rd, opposite Upgrad Career Center, Sector 30A, Vashi, Navi Mumbai, Maharashtra 400703",
+              "phone": "08591417059",
+              "email": "info@esshva.in",
               "show_social_icon": false,
               "social_type": "social-icon-only",
               "social_style": "dark",
-              "column_width": "4"
+              "column_width": "3"
             }
           },
           "f33acb5a-d461-425f-b888-5f7e4585e6fb": {
             "type": "menu",
             "settings": {
-              "heading": "Categories",
-              "selected_menu": "categories",
-              "column_width": "2"
+              "heading": "Policy Links",
+              "selected_menu": "policy-menu",
+              "column_width": "3"
             }
           },
           "31f85811-985d-45fb-9ff5-ff6810d47c3e": {
             "type": "menu",
             "settings": {
-              "heading": "Resources",
-              "selected_menu": "information-1",
-              "column_width": "2"
+              "heading": "Know Us",
+              "selected_menu": "know-us-menu",
+              "column_width": "3"
             }
           },
-          "2a68c0b6-6688-4b8a-b261-ad542a229d0b": {
-            "type": "menu",
+          "newsletter_KeCTTi": {
+            "type": "newsletter",
             "settings": {
-              "heading": "Information",
-              "selected_menu": "quick-links",
-              "column_width": "2"
-            }
-          },
-          "f99a977e-43c2-42c4-8b56-59d27529577e": {
-            "type": "menu",
-            "settings": {
-              "heading": "Services",
-              "selected_menu": "information-2",
-              "column_width": "2"
+              "border_left": false,
+              "newsletter_heading": "Join us for trendy update",
+              "newsletter_sub_heading": "Subscribe for New Arrivals, Best Deals, Discounts And Awesome Fashion Tips, Straight to your Inbox.",
+              "show_terms_agreement_contact": false,
+              "btn_icon_class": "feather-mail",
+              "column_width": "3"
             }
           }
         },
@@ -528,8 +312,7 @@
           "000beb47-6ce2-4ea4-97e3-315aec0f39d1",
           "f33acb5a-d461-425f-b888-5f7e4585e6fb",
           "31f85811-985d-45fb-9ff5-ff6810d47c3e",
-          "2a68c0b6-6688-4b8a-b261-ad542a229d0b",
-          "f99a977e-43c2-42c4-8b56-59d27529577e"
+          "newsletter_KeCTTi"
         ],
         "settings": {
           "container_type": "w-100 overflow-hidden",
@@ -547,14 +330,13 @@
           "copy_right_logo_width": 105,
           "copy_logo_url": "",
           "copyright_content_alignment": "start",
-          "copyright_text": "<p>© 2023 Hongo is proudly powered by <a href=\"https://www.themezaa.com/\" target=\"_blank\">ThemeZaa</a></p>",
-          "show_block3": true,
+          "copyright_text": "<p>© 2025 Esshva is proudly powered by <a href=\"https://olive.cloud\" target=\"_blank\" title=\"https://olive.cloud\">Olivecloud</a></p>",
+          "show_block3": false,
           "block3_type": "show_payment_icon",
           "content_position": "end",
-          "payment_icons_image": "shopify://shop_images/demo-fashion-footer-payment-icon.png",
           "payment_html_content": "",
           "background_position": "cover-background",
-          "footer_bg_color": "#f7f7f7",
+          "footer_bg_color": "#fff1e3",
           "footer_gradient": "",
           "footer_text_color": "rgba(0,0,0,0)",
           "footer_heading_color": "#262626",
@@ -600,8 +382,8 @@
         ],
         "settings": {
           "mh_container_type": "container-fluid",
-          "show_miniheader": true,
-          "show_announcement": false,
+          "show_miniheader": false,
+          "show_announcement": true,
           "mh_bg_color": "#ffffff",
           "mh_text_color": "#262626",
           "link_color": "",
@@ -611,7 +393,7 @@
           "dropdown_text_hover_color": "#262626",
           "background_position": "cover-background",
           "container_type": "container-fluid",
-          "announcement": "Free Delivery on orders over £100. Don’t miss discount.",
+          "announcement": "Free Delivery on orders over Rs 4000. Don’t miss discount.",
           "announcement_bg_color": "#000000",
           "announcement_text_color": "#ffffff",
           "announcement_link_color": ""
@@ -707,7 +489,6 @@
           "3ee44fc5-2c5d-4980-867f-feba36951ef4": {
             "type": "logowithtext",
             "settings": {
-              "logo": "shopify://shop_images/demo-furniture-logo-black_2x_38c4a4fa-c357-475c-8fbf-2773d51f535a.png",
               "logo_image_width": 135,
               "content_text": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting.</p>",
               "phone": "",
@@ -722,7 +503,7 @@
             "type": "menu",
             "settings": {
               "heading": "Collections",
-              "selected_menu": "furniture-collection",
+              "selected_menu": "",
               "column_width": "2"
             }
           },
@@ -730,7 +511,7 @@
             "type": "menu",
             "settings": {
               "heading": "Information",
-              "selected_menu": "quick-links",
+              "selected_menu": "",
               "column_width": "2"
             }
           },
@@ -738,7 +519,7 @@
             "type": "menu",
             "settings": {
               "heading": "Services",
-              "selected_menu": "information-2",
+              "selected_menu": "",
               "column_width": "2"
             }
           },
@@ -749,7 +530,6 @@
               "newsletter_sub_heading": "",
               "btn_icon_class": "fa-envelope",
               "show_terms_agreement_contact": false,
-              "payment": "shopify://shop_images/payment-getway.png",
               "column_width": "3"
             }
           }
@@ -764,6 +544,7 @@
         "settings": {
           "container_type": "w-100 overflow-hidden",
           "show_content_container": true,
+          "show_footer_top": true,
           "icon_with_text_styles": "left-icon",
           "content_alignment": "start",
           "title_font_size": 17,
@@ -774,17 +555,14 @@
           "icon_option": "image",
           "image_size": 74,
           "icon_font_size": 51,
-          "image_icon1": "shopify://shop_images/demo-furniture-icon-07.png",
           "icon_name1": "bi bi-box-seam",
           "box_heading1": "Free worldwide shipping",
           "box_sub_heading1": "On all orders over $75.00",
           "heading_link1": "",
-          "image_icon2": "shopify://shop_images/demo-furniture-icon-08.png",
           "icon_name2": "bi bi-box-seam",
           "box_heading2": "100% Payment secure",
           "box_sub_heading2": "We ensure secure payment",
           "heading_link2": "",
-          "image_icon3": "shopify://shop_images/demo-furniture-icon-09.png",
           "icon_name3": "bi bi-box-seam",
           "box_heading3": "Money back guarantee",
           "box_sub_heading3": "You can return any item",
@@ -812,6 +590,7 @@
           "payment_html_content": "",
           "background_position": "cover-background",
           "footer_bg_color": "#ecf4fa",
+          "footer_gradient": "",
           "footer_text_color": "",
           "footer_heading_color": "",
           "footer_link_hover_color": "",
@@ -849,7 +628,7 @@
             "type": "menu",
             "settings": {
               "heading": "Shop by collection",
-              "selected_menu": "watch-resources",
+              "selected_menu": "",
               "column_width": "2"
             }
           },
@@ -857,7 +636,7 @@
             "type": "menu",
             "settings": {
               "heading": "Company",
-              "selected_menu": "quick-links",
+              "selected_menu": "",
               "column_width": "2"
             }
           }
@@ -881,7 +660,6 @@
           "social_html_content": "",
           "show_block2": true,
           "block2_type": "show_both",
-          "copy_right_logo": "shopify://shop_images/demo-watch-logo-white_2x_afda0c6b-a8dc-49bc-9020-bdfaf62c983a.png",
           "copy_right_logo_width": 110,
           "copy_logo_url": "https://hongotheme.myshopify.com/",
           "copyright_content_alignment": "start",
@@ -889,10 +667,9 @@
           "show_block3": true,
           "block3_type": "show_payment_icon",
           "content_position": "center",
-          "payment_icons_image": "shopify://shop_images/demo-decor-footer-payment-icon_d072a28f-07ea-4c07-b344-5c39e8e32c06.png",
           "payment_html_content": "",
-          "footer_bg_image": "shopify://shop_images/demo-watch-footer-banner-img.jpg",
           "footer_bg_color": "#211d1c",
+          "footer_gradient": "",
           "footer_text_color": "#6a6766",
           "footer_heading_color": "#ffffff",
           "footer_link_hover_color": "#ffffff",
@@ -1283,5 +1060,7 @@
     },
     "content_for_index": []
   },
-  "platform_customizations": { "custom_css": [] }
+  "platform_customizations": {
+    "custom_css": []
+  }
 }

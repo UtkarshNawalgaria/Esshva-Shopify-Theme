@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="{{ request.locale.iso_code }}"> 
+<html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,12 +12,12 @@
     <link rel="dns-prefetch" href="https://fonts.google.com" crossorigin>
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     {%- render 'seo-title' -%}
-    {%- render 'meta-tags' -%} 
-    <link rel="preload" as="style" href="{{ 'base.min.css' | asset_url }}">
+    {%- render 'meta-tags' -%}
+    <link rel="preload" as="style" href="{{ 'base.css' | asset_url }}">
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
 
-    {%- comment -%}{{ content_for_header }}{%- endcomment -%}
-    {%- render 'header-content' -%}
+    {{ content_for_header }}
+    {% comment %} {%- render 'header-content' -%} {% endcomment %}
     {%- unless settings.use_body_google_font == true or settings.alt_google_fonts == true -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
@@ -28,7 +28,7 @@
     {%- if settings.body_google_fonts == settings.alt_google_fonts -%}
       <link href="https://fonts.googleapis.com/css?family={{ settings.body_google_fonts }}:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     {%- else -%}
-      {%- if settings.use_body_google_font == true -%} 
+      {%- if settings.use_body_google_font == true -%}
         <link href="https://fonts.googleapis.com/css?family={{ settings.body_google_fonts }}:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
       {%- endif -%}
       {%- if settings.use_alt_google_font == true -%}
@@ -71,25 +71,25 @@
         {{ 'promotion-style-2.min.css' | asset_url | stylesheet_tag }}
       {%- endif -%}
     {%- endif -%}
-    {{ 'base.min.css' | asset_url | stylesheet_tag }}
+    {{ 'base.css' | asset_url | stylesheet_tag }}
     {%- if settings.header_layout == 'style-2' -%}
       {{ 'header-style-2.min.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
     {{ 'responsive.min.css' | asset_url | stylesheet_tag }}
-    <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');    
+    <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
     </script>
-</head>
+  </head>
   {%- liquid
     assign purchase_btn = false
     if settings.enable_login_price == true and customer and settings.enable_catalog_mode == false
       assign purchase_btn = true
-    elsif  settings.enable_login_price == false and settings.enable_catalog_mode == false 
+    elsif  settings.enable_login_price == false and settings.enable_catalog_mode == false
       assign purchase_btn = true
     elsif settings.enable_catalog_mode == true and customer and settings.enable_login_price == false
       assign purchase_btn = true
     elsif settings.enable_catalog_mode == true and settings.enable_login_price == false
       assign purchase_btn = false
-    elsif settings.enable_login_price == true and customer and settings.enable_catalog_mode == true 
+    elsif settings.enable_login_price == true and customer and settings.enable_catalog_mode == true
       assign purchase_btn = true
     elsif settings.enable_login_price == true and settings.enable_catalog_mode == true
       assign purchase_btn = false
@@ -110,7 +110,7 @@
       {%- liquid
         if settings.footer_style == "style-1"
           section 'footer'
-        elsif settings.footer_style == "style-2" 
+        elsif settings.footer_style == "style-2"
           section 'footer-with-USP'
         else
           section 'footer-3'
@@ -120,15 +120,15 @@
       {%- section 'static-advertising' -%}
       <ul hidden>
         <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
-      </ul>      
+      </ul>
       {%- if settings.social_visible == 'index' -%}
         {%- if template == 'index' -%}
-          <div class="social-wrapper"> 
+          <div class="social-wrapper">
             {%- render 'social-follow', style_class: settings.social_type, social_mode: settings.social_style -%}
           </div>
         {%- endif -%}
       {%- elsif settings.social_visible == 'all-page' -%}
-        <div class="social-wrapper"> 
+        <div class="social-wrapper">
           {%- render 'social-follow', style_class: settings.social_type, social_mode: settings.social_style -%}
         </div>
       {%- endif -%}
@@ -148,7 +148,7 @@
         if should_promotion_enable == true
           render 'promotion-model'
         endif
-        
+
         assign should_enable = settings.enable_cookie_consent
         if should_enable == true and settings.enable_design_mode != true and request.design_mode == true
           assign should_enable = false
@@ -157,12 +157,11 @@
           render 'cookie-consent'
         endif
       -%}
-        <script type="text/javascript">   
+        <script type="text/javascript">
           window.Hongo = {
             shop: '{{ shop.permanent_domain }}',
             design_mode: {{ request.design_mode | json }},
             {%- if request.design_mode == true -%}
-              purchase_code: '{{ settings.purchase_code }}',
               purchase_action: '{{ settings.purchase_action }}',
               shop_info: {
                 id: {{ shop.id | json }},
@@ -187,18 +186,18 @@
       {%- if request.path contains 'products' -%}
         <script src="{{ 'product-photoswipe-lib.min.js' | asset_url }}" defer="defer"></script>
         <script src="{{ 'plyr.min.js' | asset_url }}" defer="defer"></script>
-      {%- endif -%} 
-      <script src="{{ 'lazy-images.js' | asset_url }}" async></script>      
+      {%- endif -%}
+      <script src="{{ 'lazy-images.js' | asset_url }}" async></script>
       {%- if should_newsletter_enable == true -%}
         <script src="{{ 'newsletter.js' | asset_url }}" defer="defer"></script>
       {%- endif -%}
-      <script src="{{ 'main.min.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'main.js' | asset_url }}" defer="defer"></script>
       <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
       <script src="{{ 'compare.js' | asset_url }}" defer="defer"></script>
       <script src="{{ 'product-detail.js' | asset_url }}" defer="defer"></script>
       {%- if should_promotion_enable == true -%}
         <script src="{{ 'promotion.js' | asset_url }}" defer="defer"></script>
-      {%- endif -%} 
+      {%- endif -%}
       {%- liquid
         render 'custom-cursor'
         if settings.scroll_to_top
