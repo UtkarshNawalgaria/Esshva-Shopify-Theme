@@ -104,8 +104,9 @@
                 autocomplete="off"
                 id="quantity-input"
                 aria-label="quantity"
+                step="{{ product.metafields.custom.selling_unit | default: 1 }}"
               >
-              <label for="quantity-input" class="visually-hidden"></label> 
+              <label for="quantity-input" class="visually-hidden"></label>
               <button
                 id="quantity-input"
                 class="quantity-button quantity-plus feather-plus"

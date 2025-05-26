@@ -36,8 +36,9 @@
                 data-item-id="{{ item.id }}"
                 data-cart-notification-item-remove
                 aria-label="cart"
-                ><i class="feather-x-circle"></i
-              ></a>
+              >
+                <i class="feather-x-circle"></i>
+              </a>
             </div>
             {%- unless item.product.has_only_default_variant -%}
               <div class="d-sm-flex align-items-center">
@@ -56,44 +57,60 @@
               </svg>
             </p>
             <div class="d-flex align-items-center quantity-wrap">
-              <span class="amount alt-font me-auto">{{ item.final_price | money }}</span>
-              <quantity-input class="quantity"> 
+              {% if item.product.type == "Fabric" %}
+                {% liquid
+                  assign multiplier = 1
+                  if item.product.type == "Fabric"
+                    assign multiplier = multiplier | divided_by: item.product.metafields.custom.selling_unit
+                  endif
+                  assign price_per_meter = item.final_price | times: multiplier
+                %}
+                <span class="amount alt-font me-auto">{{ price_per_meter | money | replace: '.00', '' }} / mtr</span>
+              {% else %}
+                <span class="amount alt-font me-auto">{{ item.final_price | money }}</span>
+              {% endif %}
+              <quantity-input
+                class="quantity"
+                data-selling-unit="{{ item.product.metafields.custom.selling_unit }}"
+              >
+                {% assign selling_unit = item.product.metafields.custom.selling_unit | default: 1 %}
                 <button
                   class="quantity-button quantity-minus feather-minus"
                   name="minus"
                   type="button"
                   aria-label="minus"
-                ><span class="visually-hidden">-</span></button>  
+                ><span class="visually-hidden">-</span></button>
                 <input
                   class="quantity-input"
                   type="number"
                   name="quantity"
                   min="0"
-                  value="{{ item.quantity }}"
+                  value="{{ item.quantity | times: selling_unit | replace: '.0', '' }}"
+                  step="{{ selling_unit }}"
                   data-id="{{ item.key }}"
                   id="quantity-input-{{ forloop.index }}"
                 >
-                <label for="quantity-input" class="visually-hidden"></label> 
+                <label for="quantity-input" class="visually-hidden"></label>
                 <button
                   id="quantity-input-{{ forloop.index }}"
                   class="quantity-button quantity-plus feather-plus"
                   name="plus"
                   type="button"
                   aria-label="plus"
-                ><span class="visually-hidden">+</span></button> 
+                ><span class="visually-hidden">+</span></button>
               </quantity-input>
             </div>
           </div>
         </li>
       {%- endfor -%}
-    </ul>    
+    </ul>
     <div class="cart-notification-ymal" id="cart-notification-crosssell-products" data-crosssell_type="selection">
       <!-- Content from cart-notification-crosssell-products.liquid section will be render here -->
     </div>
   </div>
   <div class="mini-cart-bottom" data-cart-bottom>
       {%- render 'cart-notification-addon' -%}
-      <div class="cart-notification-totals-wrapper alt-font">        
+      <div class="cart-notification-totals-wrapper alt-font">
         {%- if cart.cart_level_discount_applications.size > 0 -%}
           <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
             {%- for discount in cart.cart_level_discount_applications -%}

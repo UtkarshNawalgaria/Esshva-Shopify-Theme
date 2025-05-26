@@ -13,7 +13,7 @@
         <div class="product-image">
           <img src="{{ main_productImage | img_url: '110x' }}" loading="lazy" alt="" width="auto" height="auto" />
         </div>
-        <div class="product-detail"> 
+        <div class="product-detail">
           <div class="detail-wrapper">
             <a href="{{ product.url }}" aria-label="product">{{ main_product.title }}</a>
             <div class="variant-select">
@@ -59,14 +59,23 @@
                 >
               {%- endif -%}
             </div>
-          <div class="price-wrapper group-product-price">        
+          <div class="price-wrapper group-product-price">
            {%- render 'price', product: main_product -%}
-          </div> 
+          </div>
         </div>
         <div class="quantity">
           <quantity-input class="quantity">
             <button class="quantity-button quantity-minus feather-minus" name="minus" type="button" aria-label="minus"><span class="visually-hidden">-</span></button>
-            <input id="quantity-input" class="quantity-input" type="number" name="items[][quantity]" id="Quantity-{{ product.id }}" min="0" value="1" />
+            <input
+              id="quantity-input"
+              class="quantity-input"
+              type="number"
+              name="items[][quantity]"
+              id="Quantity-{{ product.id }}"
+              min="0"
+              value="1"
+              step="{{ product.metafields.custom.selling_unit | default: 1 }}"
+            />
             <label for="quantity-input" class="visually-hidden"></label>
             <button class="quantity-button quantity-plus feather-plus" name="plus" type="button" aria-label="plus"><span class="visually-hidden">+</span></button>
           </quantity-input>
@@ -132,7 +141,7 @@
                     >
                   {%- endif -%}
                 </div>
-              <div class="price-wrapper group-product-price">        
+              <div class="price-wrapper group-product-price">
                {%- render 'price', product: product -%}
               </div>
           </div>
@@ -144,7 +153,7 @@
               <button class="quantity-button quantity-plus feather-plus" name="plus" type="button" aria-label="plus"><span class="visually-hidden">+</span></button>
             </quantity-input>
           </div>
-          </div> 
+          </div>
         </li>
       {%- endfor -%}
     </ul>

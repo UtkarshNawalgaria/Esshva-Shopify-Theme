@@ -11,9 +11,9 @@
             <div class="col-md-10 col-lg-9">
               <div data-free-shipping-goal-section></div>
             </div>
-          </div> 
+          </div>
         {%- endif -%}
-      {%- endunless -%} 
+      {%- endunless -%}
       <div class="row">
         <div id="cart-errors" class="sold-product-count error-msg d-none"></div>
         <div class="{% if cart == empty %}col-md-12{% else %}col-lg-8{% endif %} checkout-content-left {% if cart == empty %}is-empty{% endif %}">
@@ -56,7 +56,7 @@
                               {%- if item.product.has_only_default_variant == false or item.properties.size != 0 or item.selling_plan_allocation != nil -%}
                                 {%- if item.product.has_only_default_variant == false -%}
                                   <div class="product-option">{{ item.options_with_values | map: "value" | join: ' / ' }}</div>
-                                {%- endif -%} 
+                                {%- endif -%}
                                 <dl>
                                   {%- for property in item.properties -%}
                                     {%- assign property_first_char = property.first | slice: 0 -%}
@@ -126,7 +126,7 @@
                                       {{ item.variant.unit_price_measurement.reference_unit }}
                                     </div>
                                   {%- endif -%}
-                                {%- else -%} 
+                                {%- else -%}
                                   <span class="price price--end">
                                     {{ item.original_price | money }}
                                   </span>
@@ -136,22 +136,23 @@
                             <td class="cart-item-quantity alt-font" data-label="{{ 'sections.cart.headings.quantity' | t }}">
                               <quantity-input class="quantity qty-small">
                                 <button class="quantity-button quantity-minus feather-minus" name="minus" type="button" data-toggle="true" aria-label="minus"><span class="visually-hidden">-</span></button>
-                                <input class="quantity-input" 
-                                  autocomplete="off" 
-                                  type="number" 
-                                  name="updates[]" 
-                                  value="{{ item.quantity }}" 
-                                  min="0" 
-                                  aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}" 
-                                  id="Quantity-{{ item.index | plus: 1 }}" 
+                                <input class="quantity-input"
+                                  autocomplete="off"
+                                  type="number"
+                                  name="updates[]"
+                                  value="{{ item.quantity }}"
+                                  min="0"
+                                  aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
+                                  id="Quantity-{{ item.index | plus: 1 }}"
                                   {% if item.id == giftwrap_product_id %}
                                   data-line-type="gift-item"
                                   {% else %}
                                   data-line-type="product-item"
                                   {% endif %}
-                                  data-index="{{ item.index | plus: 1 }}" 
+                                  data-index="{{ item.index | plus: 1 }}"
                                   data-variant-id="{{ item.key }}"
                                   id="quantity-input"
+                                  step="{{ item.product.metafields.custom.selling_unit | default: 1 }}"
                                 />
                                 <label for="quantity-input" class="visually-hidden"></label>
                                 <button id="quantity-input" class="quantity-button quantity-plus feather-plus" name="plus" type="button" data-toggle="true" aria-label="plus"><span class="visually-hidden">+</span></button>
@@ -180,7 +181,7 @@
                                     {{ item.original_line_price | money }}
                                   </span>
                                 {%- endif -%}
-                              </div>                    
+                              </div>
                             </td>
                           </tr>
                         {%- endfor -%}
@@ -275,7 +276,7 @@
 </section>
 {%- unless cart == empty -%}
 <script src="{{ 'handlebars.min.js' | asset_url }}"></script>
-<script src="/services/javascripts/countries.js"></script> 
+<script src="/services/javascripts/countries.js"></script>
 <script src="{{ 'shopify_common.js' | shopify_asset_url }}"></script>
 <script src="{{ 'shipping-calculator.js' | asset_url }}" defer></script>
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>

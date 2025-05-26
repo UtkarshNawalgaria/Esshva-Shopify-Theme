@@ -908,7 +908,7 @@ $(document).ready( function() {
                 window.localStorage.removeItem('gift_wrap');
               }
 
-        window.updateCartNotification(_this, id, 0, false);
+        window.updateCartNotification(_this, id, 0, false, 1);
     });
     var custom_selector= '';
     $(document).on('change', '.cart-notification-products .quantity-input', function(event) {
@@ -919,15 +919,16 @@ $(document).ready( function() {
         custom_selector = _this;
         const id = _this.attr('data-id');
         const quantity = _this.val();
-        window.updateCartNotification(_this, id, quantity, true);
+        const step = _this.attr('step') || 1;
+        window.updateCartNotification(_this, id, quantity, true, step);
     });
 
-    window.updateCartNotification = function updateCartNotification(elem, id, quantity, resetQty) {
+    window.updateCartNotification = function updateCartNotification(elem, id, quantity, resetQty, step) {
         const cartNotification = document.querySelector('cart-notification');
         document.getElementById('cart-notification')?.classList.add('loading');
         const body = JSON.stringify({
             id,
-            quantity,
+            quantity: parseFloat(quantity) / step,
             sections: cartNotification.getSectionsToRender().map((section) => section.id),
             sections_url: window.location.pathname
         });

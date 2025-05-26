@@ -1,7 +1,8 @@
 class ProductForm extends HTMLElement {
   constructor() {
-    super();   
+    super();
     this.form = this.querySelector('form');
+    this.sellingUnit = parseFloat(this.form.dataset.sellingUnit) || 1;
     this.form.addEventListener('submit', this.onSubmitHandler.bind(this));
     this.cartNotification = document.querySelector('cart-notification');
   }
@@ -13,21 +14,18 @@ class ProductForm extends HTMLElement {
     this.cartNotification?.setActiveElement(document.activeElement);
     const fetchData = {
       method: 'POST',
-      headers: {  
+      headers: {
           "Accept": "application/javascript",
           "X-Requested-With": "XMLHttpRequest"
       }
     };
-    var  formData = new FormData(this.form);
+    var formData = new FormData(this.form);
+
     formData.append("sections", this.cartNotification ? this.cartNotification.getSectionsToRender().map((section) => section.id) : []);
     formData.append("sections_url", window.location.pathname);
     fetchData.body = formData;
-       var body = JSON.stringify({
-        ...JSON.parse(serializeForm(this.form)),
-        sections: this.cartNotification ? this.cartNotification.getSectionsToRender().map((section) => section.id) : [],
-        sections_url: window.location.pathname
-      });
-    
+    const finalQuantity = parseFloat(fetchData.body.get("quantity")) / this.sellingUnit;
+    fetchData.body.set("quantity", finalQuantity);
     fetch(`${routes.cart_add_url}`, fetchData)
       .then((response) => {
         return response.status == '200' || response.status == '422' ? response.json() : false;
@@ -55,7 +53,7 @@ class ProductForm extends HTMLElement {
       this.cartNotification?.setActiveElement(document.activeElement);
     const fetchData = {
       method: 'POST',
-      headers: {  
+      headers: {
           "Accept": "application/javascript",
           "X-Requested-With": "XMLHttpRequest"
       }
@@ -71,7 +69,7 @@ class ProductForm extends HTMLElement {
       });
            fetch(`${routes.cart_add_url}`, fetchData)
       .then((response) => {
-        
+
         return response.status == '200' || response.status == '422' ? response.json() : false;
       })
       .then((parsedState) => {
@@ -82,7 +80,7 @@ class ProductForm extends HTMLElement {
         }
         else{
           $('.product-form__error-message-wrapper').addClass('d-none');
-          
+
         }
       })
       .catch((e) => {
@@ -99,7 +97,7 @@ class ProductForm extends HTMLElement {
     this.cartNotification?.setActiveElement(document.activeElement);
     const fetchData = {
       method: 'POST',
-      headers: {  
+      headers: {
           "Accept": "application/javascript",
           "X-Requested-With": "XMLHttpRequest"
       }
@@ -114,7 +112,7 @@ class ProductForm extends HTMLElement {
         sections: this.cartNotification ? this.cartNotification.getSectionsToRender().map((section) => section.id) : [],
         sections_url: window.location.pathname
       });
-    
+
     fetch(`${routes.cart_add_url}`, fetchData)
       .then((response) => {
         return response.status == '200' || response.status == '422' ? response.json() : false;
@@ -192,7 +190,7 @@ if ($(".bought-together").length > 0) {
             checkedItem.forEach(function(selectItem, selectItemIndex){
               const  productPrice = Number(selectItem.closest(".product-item").querySelector(".bought-together-varinat-option").getAttribute('data-price').replace(",", "")),
                      selectoption = selectItem.closest(".product-item").querySelector(".bought-together-varinat-option");
-                  selectoption.setAttribute("name", 'items[][id]')                 
+                  selectoption.setAttribute("name", 'items[][id]')
                  subtotal +=  productPrice
              });
               const finalPrice = subtotal * ( (100-discountRate) / 100 )
@@ -204,10 +202,10 @@ if ($(".bought-together").length > 0) {
       }), !1)
 
   }));
-    
+
   });
 }
-// group product js 
+// group product js
 if ($(".group-product-main").length > 0) {
   document.querySelectorAll(".group-product-variant-option").forEach((e => {
     e.addEventListener("change", (e => {
@@ -237,7 +235,7 @@ if ($(".group-product-main").length > 0) {
     }), !1)
 
   }));
-  // QuantityInput button click 
+  // QuantityInput button click
   document.querySelectorAll("quantity-input").forEach((e => {
     e.addEventListener("click", (event => {
       const quantityBtn = event.target,
@@ -262,7 +260,7 @@ if ($(".group-product-main").length > 0) {
         $('.subtotal span').attr("data-subtotal", subtotal)
         $('.subtotal span').text(Shopify.formatMoney(subtotal*100));
   }
-  // 
+  //
         document.querySelectorAll("custom-btn").forEach((e => {
         e.addEventListener("click", (event => {
           var groupProductFrom = document.querySelector('product-form');
