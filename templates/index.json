@@ -9,6 +9,88 @@
  */
 {
   "sections": {
+    "collection_list_ACnQwg": {
+      "type": "collection-list",
+      "blocks": {
+        "list_nwyene": {
+          "type": "list",
+          "settings": {
+            "collection_list": "fabrics"
+          }
+        },
+        "list_NxxmPJ": {
+          "type": "list",
+          "settings": {
+            "collection_list": "readymade"
+          }
+        },
+        "list_z37Yxf": {
+          "type": "list",
+          "settings": {
+            "collection_list": "sarees"
+          }
+        },
+        "list_qfw7a6": {
+          "type": "list",
+          "settings": {
+            "collection_list": "unstitched-suits"
+          }
+        },
+        "list_xXaVtw": {
+          "type": "list",
+          "settings": {
+            "collection_list": "dupattas"
+          }
+        },
+        "list_BQJyiW": {
+          "type": "list",
+          "settings": {
+            "collection_list": "cut-piece"
+          }
+        }
+      },
+      "block_order": [
+        "list_nwyene",
+        "list_NxxmPJ",
+        "list_z37Yxf",
+        "list_qfw7a6",
+        "list_xXaVtw",
+        "list_BQJyiW"
+      ],
+      "settings": {
+        "container_type": "container-fluid",
+        "heading": "",
+        "sub_heading": "",
+        "description": "",
+        "title_style": "style-1",
+        "slider_autoplay": false,
+        "slide_shape": "circle",
+        "slide_per_view_desktop": 6,
+        "slide_per_view_mini_desktop": 4,
+        "slide_per_view_tablet": 3,
+        "slide_per_view_mobile": 2,
+        "space_slide": 15,
+        "show_magic_cursor": false,
+        "magic_cursor_color_scheme": "base",
+        "use_default_section_typography": true,
+        "section_heading_size": 45,
+        "heading_line_height": 55,
+        "sub_heading_size": 24,
+        "sub_heading_line_height": 30,
+        "subheading_letter_spacing": 0,
+        "padding_top": "small-section-top",
+        "padding_bottom": "small-section-bottom",
+        "heading_alignment": "center",
+        "section_show": true,
+        "section_bg_color": "",
+        "section_gradient": "",
+        "section_heading_color": "",
+        "section_sub_heading_color": "",
+        "section_description_color": "",
+        "section_id": "",
+        "section_class_name": ""
+      }
+    },
     "slideshow": {
       "type": "slideshow",
       "blocks": {
@@ -109,136 +191,15 @@
         "section_class_name": ""
       }
     },
-    "collection_list_ACnQwg": {
-      "type": "collection-list",
-      "blocks": {
-        "list_nwyene": {
-          "type": "list",
-          "settings": {
-            "collection_list": "cotton"
-          }
-        },
-        "list_NxxmPJ": {
-          "type": "list",
-          "settings": {
-            "collection_list": "organza"
-          }
-        },
-        "list_z37Yxf": {
-          "type": "list",
-          "settings": {
-            "collection_list": "chinon"
-          }
-        },
-        "list_qfw7a6": {
-          "type": "list",
-          "settings": {
-            "collection_list": "chiffon"
-          }
-        },
-        "list_xXaVtw": {
-          "type": "list",
-          "settings": {
-            "collection_list": "georgette"
-          }
-        },
-        "list_BQJyiW": {
-          "type": "list",
-          "settings": {
-            "collection_list": "satin"
-          }
-        }
-      },
-      "block_order": [
-        "list_nwyene",
-        "list_NxxmPJ",
-        "list_z37Yxf",
-        "list_qfw7a6",
-        "list_xXaVtw",
-        "list_BQJyiW"
-      ],
-      "settings": {
-        "container_type": "container-fluid",
-        "heading": "Shop Fabrics",
-        "sub_heading": "",
-        "description": "",
-        "title_style": "style-1",
-        "slide_per_view_desktop": 4,
-        "slide_per_view_mini_desktop": 4,
-        "slide_per_view_tablet": 3,
-        "slide_per_view_mobile": 2,
-        "space_slide": 15,
-        "show_magic_cursor": false,
-        "magic_cursor_color_scheme": "base",
-        "use_default_section_typography": true,
-        "section_heading_size": 45,
-        "heading_line_height": 55,
-        "sub_heading_size": 24,
-        "sub_heading_line_height": 30,
-        "subheading_letter_spacing": 0,
-        "padding_top": "small-section-top",
-        "padding_bottom": "small-section-bottom",
-        "heading_alignment": "center",
-        "section_show": true,
-        "section_bg_color": "",
-        "section_gradient": "",
-        "section_heading_color": "",
-        "section_sub_heading_color": "",
-        "section_description_color": "",
-        "section_id": "",
-        "section_class_name": ""
-      }
-    },
-    "shop_banner_3_J7pMQ7": {
-      "type": "shop-banner-3",
-      "settings": {
-        "container_type": "container-fluid",
-        "show_gutter": false,
-        "show_image_right": false,
-        "banner_image": "shopify://shop_images/Summer_Collection_eac21a86-951b-47a1-9fde-b5a72a2b0739.png",
-        "block_column_width_1": "7",
-        "block_column_width_2": "5",
-        "heading": "20% OFF",
-        "sub_heading": "SUMMER SALE DISCOUNT",
-        "content": "",
-        "border_text": "TRENDY",
-        "content_bg_color": "#f7f7f7",
-        "box_inside_padding": 15,
-        "button_style": "btn-black",
-        "button_size": "btn-medium",
-        "btn_radius": 35,
-        "btn_border_width": 2,
-        "btn_icon_class": "",
-        "icon_position": "right-icon",
-        "btn_text": "Explore collection",
-        "btn_link": "",
-        "use_default_section_typography": false,
-        "section_heading_size": 75,
-        "heading_line_height": 105,
-        "sub_heading_size": 17,
-        "sub_heading_line_height": 32,
-        "subheading_letter_spacing": 2,
-        "padding_top": "very-small-section-top",
-        "padding_bottom": "very-small-section-bottom",
-        "section_show": true,
-        "section_bg_color": "",
-        "section_gradient": "",
-        "section_heading_color": "",
-        "section_sub_heading_color": "",
-        "section_description_color": "",
-        "section_id": "",
-        "section_class_name": ""
-      }
-    },
     "1630664853e697c287": {
       "type": "featured-collection",
       "settings": {
         "container_type": "container-fluid",
-        "heading": "Featured products",
+        "heading": "Readymade",
         "sub_heading": "",
-        "description": "<p>Follow the most popular trends</p>",
+        "description": "",
         "title_style": "style-1",
-        "collection": "kurtas",
+        "collection": "readymade",
         "products_limit": 4,
         "block_type": "grid",
         "show_view_all": false,
@@ -289,79 +250,56 @@
         "section_class_name": ""
       }
     },
-    "16275581504177c98e": {
-      "type": "shop-banner",
+    "featured_collection_9rga6x": {
+      "type": "featured-collection",
       "settings": {
-        "container_type": "container",
-        "banner_image": "shopify://shop_images/Kurtis_below_Rs_1999.png",
-        "title": "Kurtis under Rs 1999",
-        "rotate_text": "Affordable and Stylish Kurtis",
-        "content": "",
-        "button_style": "btn-black",
-        "button_size": "btn-medium",
-        "btn_radius": 4,
-        "btn_border_width": 2,
-        "btn_icon_class": "",
-        "icon_position": "right-icon",
-        "btn_text": "Shop the collection",
-        "btn_link": "shopify://collections/women",
-        "use_default_section_typography": false,
-        "section_heading_size": 55,
-        "heading_line_height": 55,
-        "sub_heading_size": 15,
-        "sub_heading_line_height": 30,
-        "subheading_letter_spacing": 1,
-        "padding_top": "small-section-top",
-        "padding_bottom": "pb-0",
-        "section_show": true,
-        "section_bg_color": "",
-        "section_gradient": "",
-        "section_heading_color": "",
-        "section_sub_heading_color": "",
-        "section_description_color": "",
-        "section_id": "",
-        "section_class_name": ""
-      }
-    },
-    "162756150392c08718": {
-      "type": "featured-blog",
-      "settings": {
-        "container_type": "container",
-        "heading": "Fashion Blog",
+        "container_type": "container-fluid",
+        "heading": "Sarees",
         "sub_heading": "",
-        "description": "<p>The freshest and most exciting blogs</p>",
+        "description": "",
         "title_style": "style-1",
-        "blog": "fashion",
-        "show_tags_category": "category",
-        "blog_show_date": true,
-        "blog_show_author": true,
-        "blog_show_excerpt": false,
-        "truncate_excerpt": false,
-        "truncate_word": "8",
-        "date_format": "%d %B %Y",
+        "collection": "sarees",
+        "products_limit": 4,
+        "block_type": "grid",
         "show_view_all": false,
         "button_style": "btn-black",
         "button_size": "btn-medium",
         "btn_radius": 0,
         "btn_border_width": 2,
-        "btn_icon_class": "",
+        "btn_icon_class": "bi bi-arrow-right",
         "icon_position": "right-icon",
-        "view_btn_text": "View All",
-        "post_limit_desktop": 3,
-        "post_limit_mini_desktop": 3,
-        "post_limit_tablet": 2,
-        "post_limit_mobile": 1,
-        "post_limit": 3,
+        "view_btn_text": "Shop collection",
+        "show_load_more_btn": false,
+        "load_more_btn_button_style": "btn-black",
+        "load_more_btn_button_size": "btn-extra-large",
+        "load_more_btn_radius": 0,
+        "load_more_btn_border_width": 0,
+        "load_more_btn_text": "Load more",
+        "products_limit_desktop": 4,
+        "products_limit_mini_desktop": 4,
+        "products_limit_tablet": 3,
+        "products_limit_mobile": 2,
+        "slide_per_view_desktop": 5,
+        "slide_per_view_min_desktop": 3,
+        "slide_per_view_tablet": 3,
+        "slide_per_view_mobile": 1,
+        "space_slide": 30,
+        "transition_speed": "500",
+        "autoplay": true,
+        "auto_speed_delay": "2500",
+        "show_navigation": true,
+        "loop": false,
         "use_default_section_typography": true,
         "section_heading_size": 45,
         "heading_line_height": 55,
         "sub_heading_size": 24,
         "sub_heading_line_height": 30,
         "subheading_letter_spacing": 0,
-        "padding_top": "small-section-top",
-        "padding_bottom": "medium-section-bottom",
+        "padding_top": "very-small-section-top",
+        "padding_bottom": "very-small-section-bottom",
         "heading_alignment": "center",
         "section_show": true,
+        "background_position": "cover-background",
         "section_bg_color": "",
         "section_gradient": "",
         "section_heading_color": "",
@@ -484,12 +422,10 @@
     }
   },
   "order": [
-    "slideshow",
     "collection_list_ACnQwg",
-    "shop_banner_3_J7pMQ7",
+    "slideshow",
     "1630664853e697c287",
-    "16275581504177c98e",
-    "162756150392c08718",
+    "featured_collection_9rga6x",
     "banner_image_REHjgp",
     "162755718668417b38"
   ]

@@ -11551,3 +11551,8 @@ footer.style-3 .swiper .swiper-wrapper {
     left: 0px;
     pointer-events: none;
 }
+
+/* Custom Css */
+.circle {
+	border-radius: 50%;
+}

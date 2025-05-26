@@ -1,9 +1,11 @@
 {%- capture sliderOptions -%}
-  "loop": false, 
-  "autoplay": {
-      "delay": 1500,
-      "disableOnInteraction": false
-  }, 
+  "loop": false,
+  {% if section.settings.slider_autoplay == true %}
+    "autoplay": {
+        "delay": 1500,
+        "disableOnInteraction": false
+    },
+  {% endif %}
   "direction":"horizontal",
   "keyboard":{
       "enabled":true,
@@ -11,7 +13,7 @@
   },
   "speed": 500,
   "spaceBetween": {{ section.settings.space_slide }},
-  "breakpoints": { 
+  "breakpoints": {
     "320": { "slidesPerView": {{ section.settings.slide_per_view_mobile }} },
     "768": { "slidesPerView": {{ section.settings.slide_per_view_tablet }} },
     "992": { "slidesPerView": {{ section.settings.slide_per_view_mini_desktop }} },
@@ -21,7 +23,8 @@
 <section
   id="{{ section.settings.section_id }}"
   class="section-bg collection-list-wrap section-{{ section.id }} {% if section.settings.section_show == false %}d-none{% endif %}{{ section.settings.section_class_name }} {{ section.settings.padding_top }} {{ section.settings.padding_bottom }} d-md-block"
-  style="--section_bg: {% if section.settings.section_gradient != blank %}{{ section.settings.section_gradient }}{% else %}{{ section.settings.section_bg_color }}{% endif %}">
+  style="--section_bg: {% if section.settings.section_gradient != blank %}{{ section.settings.section_gradient }}{% else %}{{ section.settings.section_bg_color }}{% endif %}"
+>
   <div class="{{ section.settings.container_type }}">
     {%- if section.settings.heading != blank
       or section.settings.sub_heading != blank
@@ -37,7 +40,7 @@
           <div class="swiper-wrapper align-items-center">
             {%- for block in section.blocks -%}
               <div class="swiper-slide text-center">
-                <div class="collection-list-item position-relative d-flex justify-content-center overflow-hidden">
+                <div class="collection-list-item position-relative d-flex justify-content-center overflow-hidden{% if section.settings.slide_shape == "circle" %} circle{% endif %}">
                   {%- assign collection = block.settings.collection_list -%}
                   <a href="{{ collection.url }}" class="d-block w-100" aria-label="link">
                     {%- render 'responsive-image', image: collection.image, placeholder_type: 'collection-image' -%}
@@ -45,15 +48,16 @@
                   <a href="{{ collection.url }}" class="collection-btn" aria-label="btn">
                     {{ collection.title | default: 'Collection name' }}
                   </a>
-                </div>         
+                </div>
               </div>
             {%- endfor -%}
           </div>
-        </div>        
+        </div>
       </div>
-    </div>    
+    </div>
   </div>
 </section>
+
 <style>
   {%- unless section.settings.use_default_section_typography == true -%}
     .section-{{ section.id }} .section-heading {
@@ -100,6 +104,7 @@
     }
   }
 </style>
+
 {% schema -%}
 {
   "name": "Collections list",
@@ -163,6 +168,28 @@
     {
       "type": "header",
       "content": "Slider Configuration"
+    },
+    {
+      "type": "checkbox",
+      "id": "slider_autoplay",
+      "default": false,
+      "label": "Autoplay Slides ?"
+    },
+    {
+      "type": "select",
+      "id": "slide_shape",
+      "label": "Shape of each collection",
+      "options": [
+        {
+          "label": "Square",
+          "value": "square"
+        },
+        {
+          "label": "Circle",
+          "value": "circle"
+        }
+      ],
+      "default": "circle"
     },
     {
       "type": "range",
