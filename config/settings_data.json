@@ -18,7 +18,7 @@
     "container_max_width": 1680,
     "enable_box_layout": false,
     "header_layout": "style-1",
-    "header_style": "left-nav-logo",
+    "header_style": "center-navigation",
     "enable_ajex_data": false,
     "show_alt_font": false,
     "transparent_header": false,
