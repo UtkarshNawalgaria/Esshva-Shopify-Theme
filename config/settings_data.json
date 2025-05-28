@@ -219,18 +219,18 @@
       "header": {
         "type": "header",
         "blocks": {
-          "link_NmEVMf": {
-            "type": "link",
-            "settings": {
-              "text": "Kurtas",
-              "url": "shopify://collections/kurtas"
-            }
-          },
           "link_9qceCm": {
             "type": "link",
             "settings": {
               "text": "Fabrics",
               "url": "shopify://collections/fabrics"
+            }
+          },
+          "link_NmEVMf": {
+            "type": "link",
+            "settings": {
+              "text": "Dupatta",
+              "url": "shopify://collections/dupattas"
             }
           },
           "link_qi8nRt": {
@@ -243,8 +243,15 @@
           "ef75c4a5-248a-47c1-acc5-cd82f05a6a91": {
             "type": "link",
             "settings": {
-              "text": "Blog",
-              "url": "shopify://blogs/fashion"
+              "text": "Readymade",
+              "url": "shopify://collections/readymade"
+            }
+          },
+          "link_iPWAEb": {
+            "type": "link",
+            "settings": {
+              "text": "Sarees",
+              "url": "shopify://collections/sarees"
             }
           },
           "de2d823a-5473-4417-b0eb-6d37267803b2": {
@@ -262,10 +269,11 @@
           }
         },
         "block_order": [
-          "link_NmEVMf",
           "link_9qceCm",
+          "link_NmEVMf",
           "link_qi8nRt",
           "ef75c4a5-248a-47c1-acc5-cd82f05a6a91",
+          "link_iPWAEb",
           "de2d823a-5473-4417-b0eb-6d37267803b2",
           "f673085f-a516-4ec6-a999-47767e9a2b13"
         ],
