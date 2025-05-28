@@ -18,7 +18,7 @@
     "container_max_width": 1680,
     "enable_box_layout": false,
     "header_layout": "style-1",
-    "header_style": "center-navigation",
+    "header_style": "left-nav-logo",
     "enable_ajex_data": false,
     "show_alt_font": false,
     "transparent_header": false,
@@ -254,6 +254,13 @@
               "url": "shopify://collections/sarees"
             }
           },
+          "link_4j4KWH": {
+            "type": "link",
+            "settings": {
+              "text": "Men's Fabrics",
+              "url": "shopify://collections/fabrics"
+            }
+          },
           "de2d823a-5473-4417-b0eb-6d37267803b2": {
             "type": "mobile-custom-html",
             "settings": {
@@ -274,6 +281,7 @@
           "link_qi8nRt",
           "ef75c4a5-248a-47c1-acc5-cd82f05a6a91",
           "link_iPWAEb",
+          "link_4j4KWH",
           "de2d823a-5473-4417-b0eb-6d37267803b2",
           "f673085f-a516-4ec6-a999-47767e9a2b13"
         ],
