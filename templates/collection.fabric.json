@@ -34,7 +34,7 @@
       "settings": {
         "container_type": "container-fluid",
         "pagination_style": "paginate",
-        "product_image_ratio": "original",
+        "product_image_ratio": "1/1",
         "enable_sorting": true,
         "show_product_options": true,
         "show_grid_bar": false,

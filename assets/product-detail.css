@@ -833,7 +833,6 @@ pickup-availability:not([available]) {
 }
 
 .sticky-addtocart .product-info {
-	max-width: 200px;
 	padding-right: 15px
 }
 
@@ -846,26 +845,30 @@ pickup-availability:not([available]) {
 
 .sticky-addtocart .product-info .price {
 	font-size: var(--font_size_minus2);
-	line-height: normal
+	line-height: normal;
+}
+
+.sticky-addtocart .product-info .price-item--sale {
+	color: var(--dark-color);
+	font-weight: 600;
 }
 
 .sticky-addtocart .product-info .price__compare {
-	margin-left: 8px
+	margin-left: 8px;
 }
 
 .sticky-product-variants select {
 	height: 50px;
-	width: 190px;
 	padding-right: 35px
 }
 
 .sticky-addtocart .quantity {
 	margin-right: 15px;
-	flex: 0 0 100px
+	flex: 0 0 100px;
 }
 
 .sticky-addtocart .product-form-buttons .btn {
-	height: 50px
+	height: 50px;
 }
 
 .sticky-addtocart .product-form-buttons .btn,
@@ -1060,7 +1063,7 @@ pickup-availability:not([available]) {
 }
 .product-tabs .jdgm-rev-widg__summary .jdgm-rev-widg__summary-text {
 	color: var(--dark-color);
-	font-weight: var(--font-weight-500);	
+	font-weight: var(--font-weight-500);
 }
 .product-tabs .jdgm-rev-widg__body .jdgm-paginate .jdgm-paginate__page {
 	font-size: var(--font_size_minus2);
@@ -1094,7 +1097,7 @@ pickup-availability:not([available]) {
     margin-right: 20px;
 }
 .product-tabs .jdgm-rev-widg__body .jdgm-row-profile .jdgm-rev__author {
-	font-weight: var(--font-weight-500);	
+	font-weight: var(--font-weight-500);
 }
 .product-tabs .jdgm-rev-widg__body .jdgm-row-profile {
 	display: flex;
@@ -1132,7 +1135,7 @@ pickup-availability:not([available]) {
 .product-tabs .jdgm-form .jdgm-form__fieldset-actions .jdgm-btn {
 	font-weight: var(--font-weight-500);
 	width: auto;
-	border-radius: 4px;	
+	border-radius: 4px;
 }
 .product-tabs .jdgm-form .jdgm-form__fieldset-actions .jdgm-btn.jdgm-cancel-rev {
 	line-height: 28px;

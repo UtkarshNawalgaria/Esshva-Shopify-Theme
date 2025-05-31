@@ -17,8 +17,9 @@
     sale_label_type: settings.sale_label_type,
     sale_label_text: settings.sale_label_text,
     review_app: settings.product_review_app,
-    sold_out_label_text: settings.sold_out_label_text
-  -%} 
+    sold_out_label_text: settings.sold_out_label_text,
+    section_product_image_ratio: product_image_ratio
+  -%}
 {%- elsif settings.product_card_style == 'shop-box' -%}
   {%- render 'product-card-box',
     product_card_product: product,
@@ -35,7 +36,8 @@
     sale_label_type: settings.sale_label_type,
     sale_label_text: settings.sale_label_text,
     review_app: settings.product_review_app,
-    sold_out_label_text: settings.sold_out_label_text
+    sold_out_label_text: settings.sold_out_label_text,
+    section_product_image_ratio: product_image_ratio
   -%}
 {% else %}
   {%- render 'product-card-comman',
@@ -53,6 +55,7 @@
     sale_label_type: settings.sale_label_type,
     sale_label_text: settings.sale_label_text,
     review_app: settings.product_review_app,
-    sold_out_label_text: settings.sold_out_label_text
+    sold_out_label_text: settings.sold_out_label_text,
+    section_product_image_ratio: product_image_ratio
   -%}
 {%- endif -%}

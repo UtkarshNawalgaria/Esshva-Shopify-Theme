@@ -6,18 +6,19 @@
   - show_secondary_image: {Boolean} Show the secondary image on hover. Default: false (optional)
   - add_image_padding: {Boolean} Enables padding on the image to space out the grid
   - show_vendor: {Boolean} Show the product vendor. Default: false
+  - section_product_image_ratio: {String} Product Image Ratio for the section
   Usage:
   {% render 'product-card', show_vendor: section.settings.show_vendor %}
 {%- endcomment -%}
 {%- liquid
-  assign purchase_btn = false 
+  assign purchase_btn = false
   assign login_to_see = false
   if settings.enable_login_price == true and customer and  settings.enable_catalog_mode == false
     assign purchase_btn = true
     assign login_to_see = true
   elsif  settings.enable_login_price == false and settings.enable_catalog_mode == false
     assign purchase_btn = true
-    assign login_to_see = true 
+    assign login_to_see = true
   elsif settings.enable_catalog_mode == true and settings.enable_login_price == false
     assign purchase_btn = false
     assign login_to_see = true
@@ -27,6 +28,11 @@
   elsif settings.enable_login_price == true  and settings.enable_catalog_mode == true
     assign purchase_btn = false
     assign login_to_see = false
+  endif
+
+  product_image_ratio = settings.product_image_ratio
+  if section_product_image_ratio != blank
+    assign product_image_ratio = section_product_image_ratio
   endif
 -%}
 <div class="box-inner">
@@ -40,7 +46,7 @@
                 <a style="{{ style | strip | strip_newlines }} " aria-label="link">
                   {% case media.media_type %}
                     {% when 'image' %}
-                      {%- render 'responsive-image', image: media, placeholder_type: 'product-image', image_ratio: settings.product_image_ratio -%}
+                      {%- render 'responsive-image', image: media, placeholder_type: 'product-image', image_ratio: product_image_ratio -%}
                   {% endcase %}
                 </a>
               </div>
@@ -54,7 +60,7 @@
           aria-label="link"
         >
           {%- if product_card_product.media -%}
-            {%- render 'responsive-image', image_width: image_width, media: product_card_product.media, type: 'product', placeholder_type: 'product-image', image_ratio: settings.product_image_ratio, show_secondary_image: show_secondary_image -%}
+            {%- render 'responsive-image', image_width: image_width, media: product_card_product.media, type: 'product', placeholder_type: 'product-image', image_ratio: product_image_ratio, show_secondary_image: show_secondary_image -%}
           {%- endif -%}
         </a>
       {%- endif -%}

@@ -6,9 +6,11 @@
   - show_secondary_image: {Boolean} Show the secondary image on hover. Default: false (optional)
   - add_image_padding: {Boolean} Enables padding on the image to space out the grid
   - show_vendor: {Boolean} Show the product vendor. Default: false
+  - section_product_image_ratio: {String} Product Image Ratio for the section
   Usage:
   {% render 'product-card', show_vendor: section.settings.show_vendor %}
 {%- endcomment -%}
+
 {%- liquid
   assign purchase_btn = false
   assign login_to_see = false
@@ -27,6 +29,11 @@
   elsif settings.enable_login_price == true and settings.enable_catalog_mode == true
     assign purchase_btn = false
     assign login_to_see = false
+  endif
+
+  product_image_ratio = settings.product_image_ratio
+  if section_product_image_ratio != blank
+    assign product_image_ratio = section_product_image_ratio
   endif
 -%}
 <div class="box-inner">
@@ -48,7 +55,7 @@
                       {%- render 'responsive-image',
                         image: media,
                         placeholder_type: 'product-image',
-                        image_ratio: settings.product_image_ratio
+                        image_ratio: product_image_ratio
                       -%}
                   {% endcase %}
                 </a>
@@ -68,7 +75,7 @@
               media: product_card_product.media,
               type: 'product',
               placeholder_type: 'product-image',
-              image_ratio: settings.product_image_ratio,
+              image_ratio: product_image_ratio,
               show_secondary_image: show_secondary_image
             -%}
           {%- endif -%}

@@ -223,7 +223,7 @@
                   {%- endfor -%}
                   {%- comment -%} Sidebar - Tags {%- endcomment -%}
                   {%- if collection.all_tags.size > 0 and section.settings.show_tag == true -%}
-                    {%- assign tag_name = section.settings.tag_list | downcase | split: ',' -%}                    
+                    {%- assign tag_name = section.settings.tag_list | downcase | split: ',' -%}
                     <div class="filter-tag">
                       <div class="filter-title alt-font{% if section.settings.filter_type == 'collapsible' %} filter-active{% endif %}">{{ 'sections.main_collection_product_grid.tag' | t }}{% if section.settings.filter_type == 'collapsible' %}<svg xmlns="http://www.w3.org/2000/svg" class="ms-auto" fill="#262626" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>{% endif %}</div>
                       <div class="filter-tags">
@@ -372,7 +372,7 @@
                         </form>
                       </collection-filters-form>
                     {%- endif -%}
-                    <div class="{%- if section.settings.sidebar_position == 'off-canvas' -%}m-0{% else%}ms-0 ms-md-auto{% endif %} filter-select order-4">
+                    <div class="{%- if section.settings.sidebar_position == 'off-canvas' -%}m-0{% else %}ms-0 ms-md-auto{% endif %} filter-select order-4">
                       <div class="collection-filters__item sorting">
                         <div class="collection-filters__field">
                           <div class="select position-relative" data-role="sort">
@@ -612,7 +612,7 @@
                                     {%- else -%}
                                       {{ 0 | money }}
                                     {%- endif -%}
-                                    - 
+                                    -
                                     {% if filter.max_value.value -%}
                                       {{ filter.max_value.value | money }}
                                     {%- else -%}
@@ -645,7 +645,7 @@
                   {%- for product in collection.products -%}
                     <div class="col product-box">
                       {%- assign product = all_products[section.settings.product_1] -%}
-                      {%- render 'product-card', product: product -%}
+                      {%- render 'product-card', product: product, product_image_ratio: section.settings.product_image_ratio -%}
                     </div>
                   {%- endfor -%}
                 </div>
@@ -708,6 +708,19 @@
       ]
     },
     {
+      "type": "select",
+      "id": "product_image_ratio",
+      "label": "Aspect ratio",
+      "default": "original",
+      "options": [
+        { "value": "original", "label": "Original image" },
+        { "value": "1/1", "label": "1:1" },
+        { "value": "3/4", "label": "3:4" },
+        { "value": "4/3", "label": "4:3" },
+        { "value": "16/9", "label": "16:9" }
+      ]
+    },
+    {
       "type": "header",
       "content": "Toolbar settings"
     },
@@ -738,7 +751,7 @@
       "id": "enable_sidebar",
       "default": true,
       "label": "Enable sidebar"
-    },    
+    },
     {
       "type": "range",
       "id": "products_per_page",
