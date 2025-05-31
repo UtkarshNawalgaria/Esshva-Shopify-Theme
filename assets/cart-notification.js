@@ -138,7 +138,7 @@ class CartNotification extends HTMLElement {
     fetch(window.Shopify.routes.root + "cart.js")
       .then((response) => response.json())
       .then((parsedState) => {
-        const cartItem = parsedState.item_count,
+        const cartItem = parsedState.items.length,
           itemTitle = document.querySelector(".cart-count"),
           ProductText = itemTitle.getAttribute("data-product"),
           ProductsText = itemTitle.getAttribute("data-products");

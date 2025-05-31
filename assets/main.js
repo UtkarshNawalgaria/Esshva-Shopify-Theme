@@ -970,7 +970,7 @@ $(document).ready( function() {
         });
     }
     window.cartCount = function cartCount(parsedState) {
-        var count_bubble = parsedState.item_count;
+        var count_bubble = parsedState.items.length;
         var cart_selectors = document.querySelectorAll('[data-cart-count]');
         var add_class = document.querySelectorAll("[cart-icon-bubble]");
         var cart_total = parsedState.original_total_price;

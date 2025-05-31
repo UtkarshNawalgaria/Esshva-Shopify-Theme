@@ -36,9 +36,9 @@
         if product.metafields.custom.selling_unit != blank
           assign multiplier = multiplier | divided_by: product.metafields.custom.selling_unit
         endif
-        assign price_per_meter = price | times: multiplier
+        assign price_per_meter = price | times: multiplier | money | replace: '.00', ''
       %}
-      <span class="price-item price-item--regular">{{ price_per_meter | money | replace: '.00', '' }} / mtr</span>
+      <span class="price-item price-item--regular">{{ price_per_meter }} / mtr</span>
     </div>
   {% else %}
     <div class="price__regular">
