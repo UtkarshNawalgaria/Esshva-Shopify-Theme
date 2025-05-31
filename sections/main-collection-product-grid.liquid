@@ -5,56 +5,92 @@
     <div class="row {% if section.settings.sidebar_position == 'right' %}flex-row-reverse{% endif %}">
       {%- if section.settings.enable_sidebar == true -%}
         <div class="col-xxl-2 col-lg-3 product-sidebar {% if section.settings.sidebar_position == 'off-canvas' %}off-canvas-filter{% endif %}">
-          <a class="sidebar-filter-close" rel="nofollow noopener" href="#" aria-label="close"><i class="feather-x"></i></a>
+          <a class="sidebar-filter-close" rel="nofollow noopener" href="#" aria-label="close"
+            ><i class="feather-x"></i
+          ></a>
           <div class="page-width collection-filters" id="main-collection-filters" data-id="{{ section.id }}">
             {%- assign total_active_values = 0 -%}
             <collection-filters-form class="facets">
-              <form id="CollectionFiltersForm" class="{% if section.settings.filter_type == 'collapsible' %}collapsible-filters{% else %}simple-filter{% endif %}">
+              <form
+                id="CollectionFiltersForm"
+                class="{% if section.settings.filter_type == 'collapsible' %}collapsible-filters{% else %}simple-filter{% endif %}"
+              >
                 <div class="filter_wrapper">
                   {%- comment -%} Sidebar - Collection list {%- endcomment -%}
                   {%- if linklists[section.settings.menu].links.size > 0 -%}
                     <div class="collection-list">
-                        {%- if section.settings.collection_list_title != blank -%}
-                          <div class="filter-title alt-font{% if section.settings.filter_type == 'collapsible' %} filter-active{% endif %}">{{ section.settings.collection_list_title }}{% if section.settings.filter_type == 'collapsible' %}<svg xmlns="http://www.w3.org/2000/svg" class="ms-auto" fill="#262626" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>{% endif %}</div>
-                        {%- endif -%}
-                        <ul class="filter-list">
-                          {%- for link in linklists[section.settings.menu].links -%}
-                            <li>
-                              <a href="{{ link.url | default: '#' }}" class="{% if link.active == true %}active{% endif %}" aria-label="link">
-                                {{- link.title | escape -}}
-                              </a>
-                            </li>
-                          {%- endfor -%}
-                        </ul>
+                      {%- if section.settings.collection_list_title != blank -%}
+                        <div class="filter-title alt-font{% if section.settings.filter_type == 'collapsible' %} filter-active{% endif %}">
+                          {{ section.settings.collection_list_title -}}
+                          {%- if section.settings.filter_type == 'collapsible' %}
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="ms-auto"
+                              fill="#262626"
+                              viewBox="0 0 448 512"
+                            >
+                              <path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/>
+                            </svg>
+                          {% endif %}
+                        </div>
+                      {%- endif -%}
+                      <ul class="filter-list">
+                        {%- for link in linklists[section.settings.menu].links -%}
+                          <li>
+                            <a
+                              href="{{ link.url | default: '#' }}"
+                              class="{% if link.active == true %}active{% endif %}"
+                              aria-label="link"
+                            >
+                              {{- link.title | escape -}}
+                            </a>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
                     </div>
                   {%- endif -%}
                   {%- comment -%} Sidebar - Filters {%- endcomment -%}
                   {%- for filter in collection.filters -%}
-                  {%- liquid
+                    {%- liquid
                       assign iscolor = false
-                      assign isSize = false
-                      assign colorOptions = settings.colorOpt | downcase | replace:", ","," | replace:" , ","," | replace:" ,","," | split: ","
-                      assign sizeOptions =  settings.sizeOpt | downcase | replace:", ","," | replace:" , ","," | replace:" ,","," | split: ","
-                      assign fname = filter.label | downcase | replace: " ", "-"
+                      assign is_size = false
+                      assign colorOptions = settings.colorOpt | downcase | replace: ', ', ',' | replace: ' , ', ',' | replace: ' ,', ',' | split: ','
+                      assign sizeOptions = settings.sizeOpt | downcase | replace: ', ', ',' | replace: ' , ', ',' | replace: ' ,', ',' | split: ','
+                      assign fname = filter.label | downcase | replace: ' ', '-'
                       if colorOptions contains fname
                         assign iscolor = true
                       endif
                       if sizeOptions contains fname
-                          assign isSize = true
+                        assign is_size = true
                       endif
-                  -%}
+                    -%}
                     {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
                     {%- case filter.type -%}
                       {%- when 'list' -%}
-                        <div class="js-filter{% if iscolor == true  %} color{% elsif isSize == true %} size{% else %} {{ filter.label | downcase | replace: " ", "-" }}{% endif %}" data-index="{{ forloop.index }}">
-                          <div class="filter-title alt-font{% if section.settings.filter_type == 'collapsible' %} filter-active{% endif %}">{{ filter.label | escape }}{% if section.settings.filter_type == 'collapsible' %}<svg xmlns="http://www.w3.org/2000/svg" class="ms-auto" fill="#262626" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>{% endif %}</div>
+                        <div
+                          class="js-filter{% if iscolor == true  %} color{% elsif is_size == true %} size{% else %} {{ filter.label | downcase | replace: " ", "-" }}{% endif %}"
+                          data-index="{{ forloop.index }}"
+                        >
+                          <div class="filter-title alt-font{% if section.settings.filter_type == 'collapsible' %} filter-active{% endif %}">
+                            {{ filter.label | escape -}}
+                            {%- if section.settings.filter_type == 'collapsible' %}
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="ms-auto"
+                                fill="#262626"
+                                viewBox="0 0 448 512"
+                              >
+                                <path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/>
+                              </svg>
+                            {% endif %}
+                          </div>
                           <ul class="filter-list" role="list">
                             {%- for value in filter.values -%}
                               <li>
                                 <label
                                   for="Filter-{{ filter.label | escape }}-{{ forloop.index }}"
-                                  class="swatches-hover w-100 d-flex justify-content-start align-items-center facet-checkbox{% if value.count == 0 and value.active == false %} disabled{% endif %} {% if iscolor == true  %}color-filter {% elsif isSize == true %}size-filter{% endif %}"
-                                  {%- if  iscolor == true %}
+                                  class="swatches-hover w-100 d-flex justify-content-start align-items-center facet-checkbox{% if value.count == 0 and value.active == false %} disabled{% endif %} {% if iscolor == true  %}color-filter {% elsif is_size == true %}size-filter{% endif %}"
+                                  {%- if iscolor == true %}
                                     data-bs-toggle="tooltip" data-bs-placement="top"
                                     data-bs-original-title="{{ value.value }}" data-bs-trigger="hover"
                                   {%- endif %}
@@ -101,8 +137,10 @@
                                   <span class="radio-label"></span>
                                   <span class="filter-label">{{ value.label | escape }}</span>
                                   <span class="count float-end">
-                                    ( {%- if value.count < 10 -%}0{%- endif -%}
-                                    {{ value.count -}} )
+                                    (
+                                    {%- if value.count < 10 -%}0{%- endif -%}
+                                    {{ value.count -}}
+                                    )
                                   </span>
                                 </label>
                               </li>
@@ -118,7 +156,19 @@
                           endif
                         -%}
                         <div class="js-filter" data-index="{{ forloop.index }}">
-                          <div class="filter-title alt-font{% if section.settings.filter_type == 'collapsible' %} filter-active{% endif %}">{{ filter.label | escape }}{% if section.settings.filter_type == 'collapsible' %}<svg xmlns="http://www.w3.org/2000/svg" class="ms-auto" fill="#262626" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>{% endif %}</div>
+                          <div class="filter-title alt-font{% if section.settings.filter_type == 'collapsible' %} filter-active{% endif %}">
+                            {{ filter.label | escape -}}
+                            {%- if section.settings.filter_type == 'collapsible' %}
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="ms-auto"
+                                fill="#262626"
+                                viewBox="0 0 448 512"
+                              >
+                                <path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/>
+                              </svg>
+                            {% endif %}
+                          </div>
                           <div class="price-range-wrapper">
                             <span
                               class="count-bubble{%- if filter.min_value.value or filter.max_value.value -%}{{ filter.active_values.size }} count-bubble--dot{% endif %}"
@@ -133,17 +183,27 @@
                                     placeholder="0"
                                     min="0"
                                     {%- if filter.min_value.value -%}
-                                    {%- if uses_comma_decimals -%}
-                                    value="{{ filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' | round }}"
-                                    {%- assign minPrice = filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' | round -%}
+                                      {%- if uses_comma_decimals -%}
+                                        value="{{ filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' | round }}"
+                                        {%- assign minPrice = filter.min_value.value
+                                          | money_without_currency
+                                          | replace: '.', ''
+                                          | replace: ',', '.'
+                                          | round
+                                        -%}
+                                      {%- else -%}
+                                        value="{{ filter.min_value.value | money_without_currency | replace: ',', '' | round }}"
+                                        {%- assign minPrice = filter.min_value.value
+                                          | money_without_currency
+                                          | replace: ',', ''
+                                          | round
+                                        -%}
+                                      {% endif %}
                                     {%- else -%}
-                                    value="{{ filter.min_value.value | money_without_currency | replace: ',', '' | round }}"
-                                    {%- assign minPrice = filter.min_value.value | money_without_currency | replace: ',', '' | round -%}
-                                    {% endif %}
-                                    {%- else -%}
-                                    {%- assign minPrice = 0 -%}
+                                      {%- assign minPrice = 0 -%}
                                     {%- endif -%}
-                                    max="{{ filter.range_max | money_without_currency | replace: ',', '' }}">
+                                    max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                                  >
                                 </div>
                                 <span>-</span>
                                 <div class="field">
@@ -156,13 +216,26 @@
                                     {%- if filter.max_value.value -%}
                                       {%- if uses_comma_decimals -%}
                                         value="{{ filter.max_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
-                                        {%- assign maxPrice = filter.max_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' | round -%}
+                                        {%- assign maxPrice = filter.max_value.value
+                                          | money_without_currency
+                                          | replace: '.', ''
+                                          | replace: ',', '.'
+                                          | round
+                                        -%}
                                       {%- else -%}
                                         value="{{ filter.max_value.value | money_without_currency | replace: ',', '' | round }}"
-                                        {%- assign maxPrice = filter.max_value.value | money_without_currency | replace: ',', '' | round -%}
+                                        {%- assign maxPrice = filter.max_value.value
+                                          | money_without_currency
+                                          | replace: ',', ''
+                                          | round
+                                        -%}
                                       {%- endif %}
                                     {%- else -%}
-                                      {%- assign maxPrice = filter.range_max | money_without_currency | replace: ',', '' | round -%}
+                                      {%- assign maxPrice = filter.range_max
+                                        | money_without_currency
+                                        | replace: ',', ''
+                                        | round
+                                      -%}
                                       value="{{ maxPrice }}"
                                     {%- endif -%}
                                     {%- if uses_comma_decimals -%}
@@ -171,61 +244,87 @@
                                     {%- else -%}
                                       placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' | replace: '.00', '' }}"
                                       max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
-                                    {% endif %}>
+                                    {% endif %}
+                                  >
                                 </div>
                               </price-range>
                               {% liquid
                                 assign minPrice = minPrice | times: 1
                                 if uses_comma_decimals
-                                assign range_max = filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.'  | round
+                                  assign range_max = filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' | round
                                 else
-                                assign range_max = filter.range_max | money_without_currency | replace: ',', ''  | round
+                                  assign range_max = filter.range_max | money_without_currency | replace: ',', '' | round
                                 endif
                                 assign from = minPrice | times: 100 | divided_by: range_max | round: 2
                                 assign to = maxPrice | times: 100 | divided_by: range_max | round: 2
                               -%}
                               <div class="price-range" style="--range-from: {{ from }}%; --range-to: {{ to }}%">
-                                <input type="range" class="range-slider range-slider-min" min="0" max="{{ range_max }}" value="{{ minPrice }}" id="range-slider-min" aria-label="range-slider-min">
-                                <input type="range" class="range-slider range-slider-max" min="0" max="{{ range_max }}" value="{{ maxPrice }}" id="range-slider-max" aria-label="range-slider-max">
+                                <input
+                                  type="range"
+                                  class="range-slider range-slider-min"
+                                  min="0"
+                                  max="{{ range_max }}"
+                                  value="{{ minPrice }}"
+                                  id="range-slider-min"
+                                  aria-label="range-slider-min"
+                                >
+                                <input
+                                  type="range"
+                                  class="range-slider range-slider-max"
+                                  min="0"
+                                  max="{{ range_max }}"
+                                  value="{{ maxPrice }}"
+                                  id="range-slider-max"
+                                  aria-label="range-slider-max"
+                                >
                               </div>
                               <div class="price-lable">
-                              <div class="label">{{ filter.label | escape }}:</div>
-                              <div class="price">
-                                {%- assign min_value = filter.min_value.value | default: 0 -%}
-                                {%- assign max_value = filter.max_value.value | default: filter.range_max -%}
-                                <span class="min">
-                                  {% if settings.currency_code_enabled %}
-                                    {% if filter.max_value.value %}
-                                      {{ min_value | money_with_currency }}
+                                <div class="label">{{ filter.label | escape }}:</div>
+                                <div class="price">
+                                  {%- assign min_value = filter.min_value.value | default: 0 -%}
+                                  {%- assign max_value = filter.max_value.value | default: filter.range_max -%}
+                                  <span class="min">
+                                    {% if settings.currency_code_enabled %}
+                                      {% if filter.max_value.value %}
+                                        {{ min_value | money_with_currency }}
+                                      {% else %}
+                                        {{ filter.range_max | money_without_currency }}
+                                      {% endif %}
                                     {% else %}
-                                    {{ filter.range_max | money_without_currency }}
+                                      {{ min_value | money }}
                                     {% endif %}
-                                  {% else %}
-                                  {{ min_value | money }}
-                                  {% endif %}
-                                </span> - <span class="max">
-                                  {% if settings.currency_code_enabled %}
-                                    {% if filter.max_value.value %}
-                                      {{ max_value | money_with_currency }}
+                                  </span>
+                                  -
+                                  <span class="max">
+                                    {% if settings.currency_code_enabled %}
+                                      {% if filter.max_value.value %}
+                                        {{ max_value | money_with_currency }}
+                                      {% else %}
+                                        {{ filter.range_max | money_without_currency }}
+                                      {% endif %}
                                     {% else %}
-                                    {{ filter.range_max | money_without_currency }}
+                                      {{ max_value | money }}
                                     {% endif %}
-                                  {% else %}
-                                  {{ max_value | money }}
-                                  {% endif %}
-                                </span>
+                                  </span>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
                     {%- endcase -%}
                   {%- endfor -%}
                   {%- comment -%} Sidebar - Tags {%- endcomment -%}
                   {%- if collection.all_tags.size > 0 and section.settings.show_tag == true -%}
                     {%- assign tag_name = section.settings.tag_list | downcase | split: ',' -%}
                     <div class="filter-tag">
-                      <div class="filter-title alt-font{% if section.settings.filter_type == 'collapsible' %} filter-active{% endif %}">{{ 'sections.main_collection_product_grid.tag' | t }}{% if section.settings.filter_type == 'collapsible' %}<svg xmlns="http://www.w3.org/2000/svg" class="ms-auto" fill="#262626" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>{% endif %}</div>
+                      <div class="filter-title alt-font{% if section.settings.filter_type == 'collapsible' %} filter-active{% endif %}">
+                        {{ 'sections.main_collection_product_grid.tag' | t -}}
+                        {%- if section.settings.filter_type == 'collapsible' %}
+                          <svg xmlns="http://www.w3.org/2000/svg" class="ms-auto" fill="#262626" viewBox="0 0 448 512">
+                            <path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/>
+                          </svg>
+                        {% endif %}
+                      </div>
                       <div class="filter-tags">
                         <ul class="d-flex flex-wrap">
                           {%- if section.settings.tag_type == 'all' -%}
@@ -249,7 +348,7 @@
                           {%- else -%}
                             {%- for show_tag in tag_name -%}
                               {%- for tag in collection.all_tags -%}
-                              {%- assign tag_item = tag | downcase -%}
+                                {%- assign tag_item = tag | downcase -%}
                                 {%- if show_tag == tag_item -%}
                                   {%- assign is_active = false -%}
                                   {%- if current_tags contains tag -%}
@@ -279,7 +378,14 @@
                   <input type="hidden" name="q" value="{{ collection.current_vendor }}{{ collection.current_type }}">
                 {%- endif -%}
                 {%- if section.settings.enable_sorting -%}
-                  <input class="d-none" id="collection-filters__sort-input" type="checkbox" name="sort_by" value="{{ current_sort_by | escape }}" checked>
+                  <input
+                    class="d-none"
+                    id="collection-filters__sort-input"
+                    type="checkbox"
+                    name="sort_by"
+                    value="{{ current_sort_by | escape }}"
+                    checked
+                  >
                 {%- endif -%}
               </form>
             </collection-filters-form>
@@ -328,89 +434,115 @@
                 id="main-collection-product-grid"
                 data-id="{{ section.id }}"
               >
-              {%- if section.settings.show_product_options != true or section.settings.show_grid_bar or section.settings.enable_sorting -%}
-                <div class="sorter-wrapper d-flex flex-wrap flex-md-nowrap justify-content-center align-items-center w-100">
-                  <div class="filter-btn">
-                    <i class="feather-filter"></i>
-                    {{- 'sections.main_collection_product_grid.filter_label' | t }}
-                  </div>
-                  <div class="swich-wrapper d-flex justify-content-center align-items-center">
-                    {%- if section.settings.show_product_options -%}
-                      <div class="collection-product-count light">
-                        {%- if paginate.next.is_link -%}
-                          {{ 'sections.main_collection_product_grid.showing_label' | t }} {{ paginate.current_offset | plus: 1 }} -
-                          {{ paginate.current_offset | plus: paginate.page_size }} {{ 'sections.main_collection_product_grid.of_label' | t }} {{ paginate.items }} {{ 'sections.main_collection_product_grid.results_label' | t }}
-                        {%- else -%}
-                          {%- assign itemsOnCurrentPage = paginate.items | minus: paginate.current_offset -%}
-                          {{ 'sections.main_collection_product_grid.showing_label' | t }} {{ paginate.current_offset | plus: 1 }} -
-                          {{ paginate.current_offset | plus: itemsOnCurrentPage }} {{ 'sections.main_collection_product_grid.of_label' | t }} {{ paginate.items }} {{ 'sections.main_collection_product_grid.results_label' | t }}
-                        {%- endif -%}
-                      </div>
-                    {%- endif -%}
-                    {%- if section.settings.show_grid_bar -%}
-                      <div class="hongo-column-switch d-flex">
-                        <a href="#" data-col="1" class="d-flex d-md-none" aria-label="link"><span></span></a>
-                        <a href="#" data-col="3" aria-label="link"><span></span><span></span></a>
-                        <a href="#" data-col="3" class="d-none d-md-flex" aria-label="link"><span></span><span></span><span></span></a>
-                        <a href="#" data-col="4" class="d-none d-lg-flex" aria-label="link"><span></span><span></span><span></span><span></span
-                        ></a>
-                      </div>
-                    {%- endif -%}
+                {%- if section.settings.show_product_options != true
+                  or section.settings.show_grid_bar
+                  or section.settings.enable_sorting
+                -%}
+                  <div class="sorter-wrapper d-flex flex-wrap flex-md-nowrap justify-content-center align-items-center w-100">
+                    <div class="filter-btn">
+                      <i class="feather-filter"></i>
+                      {{- 'sections.main_collection_product_grid.filter_label' | t }}
                     </div>
-                  {%- if section.settings.enable_sorting -%}
-                    {%- if section.settings.enable_sidebar != true -%}
-                      <collection-filters-form class="facets">
-                        <form id="CollectionFiltersForm">
-                          <input
-                            class="d-none"
-                            id="collection-filters__sort-input"
-                            type="checkbox"
-                            name="sort_by"
-                            value="{{ current_sort_by | escape }}"
-                            checked
-                          >
-                        </form>
-                      </collection-filters-form>
-                    {%- endif -%}
-                    <div class="{%- if section.settings.sidebar_position == 'off-canvas' -%}m-0{% else %}ms-0 ms-md-auto{% endif %} filter-select order-4">
-                      <div class="collection-filters__item sorting">
-                        <div class="collection-filters__field">
-                          <div class="select position-relative" data-role="sort">
-                            <label class="sort-by">{{ 'sections.main_collection_product_grid.sort_by' | t }}</label>
-                            <select autocomplete="off" class="select__select collection-filters__sort" id="collection-filters__sort" style="display:none !important;" data-role="sort-select"
+                    <div class="swich-wrapper d-flex justify-content-center align-items-center">
+                      {%- if section.settings.show_product_options -%}
+                        <div class="collection-product-count light">
+                          {%- if paginate.next.is_link -%}
+                            {{ 'sections.main_collection_product_grid.showing_label' | t }}
+                            {{ paginate.current_offset | plus: 1 }} -
+                            {{ paginate.current_offset | plus: paginate.page_size }}
+                            {{ 'sections.main_collection_product_grid.of_label' | t }}
+                            {{ paginate.items }}
+                            {{ 'sections.main_collection_product_grid.results_label' | t }}
+                          {%- else -%}
+                            {%- assign itemsOnCurrentPage = paginate.items | minus: paginate.current_offset -%}
+                            {{ 'sections.main_collection_product_grid.showing_label' | t }}
+                            {{ paginate.current_offset | plus: 1 }} -
+                            {{ paginate.current_offset | plus: itemsOnCurrentPage }}
+                            {{ 'sections.main_collection_product_grid.of_label' | t }}
+                            {{ paginate.items }}
+                            {{ 'sections.main_collection_product_grid.results_label' | t }}
+                          {%- endif -%}
+                        </div>
+                      {%- endif -%}
+                      {%- if section.settings.show_grid_bar -%}
+                        <div class="hongo-column-switch d-flex">
+                          <a href="#" data-col="1" class="d-flex d-md-none" aria-label="link"><span></span></a>
+                          <a href="#" data-col="3" aria-label="link"><span></span><span></span></a>
+                          <a href="#" data-col="3" class="d-none d-md-flex" aria-label="link"
+                            ><span></span><span></span><span></span
+                          ></a>
+                          <a href="#" data-col="4" class="d-none d-lg-flex" aria-label="link"
+                            ><span></span><span></span><span></span><span></span
+                          ></a>
+                        </div>
+                      {%- endif -%}
+                    </div>
+                    {%- if section.settings.enable_sorting -%}
+                      {%- if section.settings.enable_sidebar != true -%}
+                        <collection-filters-form class="facets">
+                          <form id="CollectionFiltersForm">
+                            <input
+                              class="d-none"
+                              id="collection-filters__sort-input"
+                              type="checkbox"
+                              name="sort_by"
+                              value="{{ current_sort_by | escape }}"
+                              checked
                             >
+                          </form>
+                        </collection-filters-form>
+                      {%- endif -%}
+                      <div class="{%- if section.settings.sidebar_position == 'off-canvas' -%}m-0{% else %}ms-0 ms-md-auto{% endif %} filter-select order-4">
+                        <div class="collection-filters__item sorting">
+                          <div class="collection-filters__field">
+                            <div class="select position-relative" data-role="sort">
+                              <label class="sort-by">{{ 'sections.main_collection_product_grid.sort_by' | t }}</label>
+                              <select
+                                autocomplete="off"
+                                class="select__select collection-filters__sort"
+                                id="collection-filters__sort"
+                                style="display:none !important;"
+                                data-role="sort-select"
+                              >
+                                {%- for option in collection.sort_options -%}
+                                  <option
+                                    value="{{ option.value | escape }}"
+                                    {% if option.value == current_sort_by %}
+                                      selected="selected"
+                                    {% endif %}
+                                  >
+                                    {{ option.name | escape }}
+                                  </option>
+                                {%- endfor -%}
+                              </select>
                               {%- for option in collection.sort_options -%}
-                                <option value="{{ option.value | escape }}" {% if option.value == current_sort_by %} selected="selected" {% endif %}>
-                                  {{ option.name | escape }}
-                                </option>
-                              {%- endfor -%}
-                            </select>
-                            {%- for option in collection.sort_options -%}
-                              {% if option.value == current_sort_by %}
-                                <span class="select-label" data-role="sort-title">
-                                  {{- option.name | escape -}}
-                                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+                                {% if option.value == current_sort_by %}
+                                  <span class="select-label" data-role="sort-title">
+                                    {{- option.name | escape -}}
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                                      <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+                                    </svg>
                                   </span>
-                              {%- endif -%}
-                            {%- endfor -%}
-                            <ul class="select-items" data-role="sort-options">
-                              {%- for option in collection.sort_options -%}
-                                <li
-                                  class="custom-option{% if option.value == current_sort_by %} selected{% endif %}"
-                                  data-value="{{ option.value | escape }}"
-                                  data-name="{{ option.name | escape }}"
-                                >
-                                  {{ option.name | escape }}
-                                </li>
+                                {%- endif -%}
                               {%- endfor -%}
-                            </ul>
+                              <ul class="select-items" data-role="sort-options">
+                                {%- for option in collection.sort_options -%}
+                                  <li
+                                    class="custom-option{% if option.value == current_sort_by %} selected{% endif %}"
+                                    data-value="{{ option.value | escape }}"
+                                    data-name="{{ option.name | escape }}"
+                                  >
+                                    {{ option.name | escape }}
+                                  </li>
+                                {%- endfor -%}
+                              </ul>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  {%- endif -%}
-                </div>
-              {%- endif -%}
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
                 <collection-filters-form class="facets">
                   <form id="CollectionFiltersFormSorting">
                     <div class="filter_wrapper">
@@ -454,10 +586,16 @@
                         </ul>
                         {%- unless show_active_filter -%}
                           <style type="text/css">
-                            .active-filters.active-facets-desktop{display:none;}
+                            .active-filters.active-facets-desktop {
+                              display: none;
+                            }
                           </style>
                         {%- endunless -%}
-                        <a href="{{ collection.url }}?sort_by={{ current_sort_by }}" class="js-facet-remove" aria-label="{{- 'sections.collection_template.clear_all' | t -}}">
+                        <a
+                          href="{{ collection.url }}?sort_by={{ current_sort_by }}"
+                          class="js-facet-remove"
+                          aria-label="{{- 'sections.collection_template.clear_all' | t -}}"
+                        >
                           {{- 'sections.collection_template.clear_all' | t -}}
                         </a>
                       </div>
@@ -468,7 +606,11 @@
                   {{ 'cart-icon.png' | asset_url | img_tag: 'cart-icon' }}
                   <div class="empty-filter-text">
                     {{ 'sections.main_collection_product_grid.filter_text' | t }}
-                    <a href="{{ collection.url }}?sort_by={{ current_sort_by }}" class="js-facet-remove" aria-label="{{- 'sections.collection_template.clear_all' | t -}}">
+                    <a
+                      href="{{ collection.url }}?sort_by={{ current_sort_by }}"
+                      class="js-facet-remove"
+                      aria-label="{{- 'sections.collection_template.clear_all' | t -}}"
+                    >
                       {{- 'sections.collection_template.clear_all' | t -}}
                     </a>
                   </div>
@@ -490,36 +632,51 @@
                     </svg>
                   </div>
                 </div>
-                {%- if section.settings.show_product_options != true or section.settings.show_grid_bar or section.settings.enable_sorting -%}
+                {%- if section.settings.show_product_options != true
+                  or section.settings.show_grid_bar
+                  or section.settings.enable_sorting
+                -%}
                   <div class="sorter-wrapper d-flex flex-wrap flex-md-nowrap justify-content-center align-items-center">
                     <div class="filter-btn">
                       <i class="feather-filter"></i>
                       {{- 'sections.main_collection_product_grid.filter_label' | t }}
                     </div>
-                      <div class="swich-wrapper d-flex justify-content-center align-items-center">
-                        {%- if section.settings.show_product_options -%}
-                          <div class="collection-product-count light">
-                               <span id="ProductCountDesktop">
-                                {%- if collection.results_count -%}
-                                  {{ 'templates.search.results_with_count' | t: terms: collection.terms, count: collection.results_count }}
-                                {%- elsif collection.products_count == collection.all_products_count -%}
-                                  {{ 'sections.collection_template.product_count_simple' | t: count: collection.products_count }}
-                                {%- else -%}
-                                  {{ 'sections.collection_template.product_count' | t: product_count: collection.products_count, count: collection.all_products_count }}
-                                {%- endif -%}
-                              </span>
-                          </div>
-                        {%- endif -%}
-                        {%- if section.settings.show_grid_bar -%}
-                          <div class="hongo-column-switch d-flex">
-                            <a href="#" data-col="1" class="d-flex d-md-none" aria-label="link"><span></span></a>
-                            <a href="#" data-col="2" aria-label="link"><span></span><span></span></a>
-                            <a href="#" data-col="3" class="d-none d-md-flex" aria-label="link"><span></span><span></span><span></span></a>
-                            <a href="#" data-col="4" class="d-none d-lg-flex" aria-label="link"><span></span><span></span><span></span><span></span
-                            ></a>
-                          </div>
-                        {%- endif -%}
-                      </div>
+                    <div class="swich-wrapper d-flex justify-content-center align-items-center">
+                      {%- if section.settings.show_product_options -%}
+                        <div class="collection-product-count light">
+                          <span id="ProductCountDesktop">
+                            {%- if collection.results_count -%}
+                              {{
+                                'templates.search.results_with_count'
+                                | t: terms: collection.terms, count: collection.results_count
+                              }}
+                            {%- elsif collection.products_count == collection.all_products_count -%}
+                              {{
+                                'sections.collection_template.product_count_simple'
+                                | t: count: collection.products_count
+                              }}
+                            {%- else -%}
+                              {{
+                                'sections.collection_template.product_count'
+                                | t: product_count: collection.products_count, count: collection.all_products_count
+                              }}
+                            {%- endif -%}
+                          </span>
+                        </div>
+                      {%- endif -%}
+                      {%- if section.settings.show_grid_bar -%}
+                        <div class="hongo-column-switch d-flex">
+                          <a href="#" data-col="1" class="d-flex d-md-none" aria-label="link"><span></span></a>
+                          <a href="#" data-col="2" aria-label="link"><span></span><span></span></a>
+                          <a href="#" data-col="3" class="d-none d-md-flex" aria-label="link"
+                            ><span></span><span></span><span></span
+                          ></a>
+                          <a href="#" data-col="4" class="d-none d-lg-flex" aria-label="link"
+                            ><span></span><span></span><span></span><span></span
+                          ></a>
+                        </div>
+                      {%- endif -%}
+                    </div>
                     {%- if section.settings.enable_sorting -%}
                       {%- if section.settings.enable_sidebar != true -%}
                         <collection-filters-form class="facets">
@@ -562,8 +719,10 @@
                                 {%- if option.value == current_sort_by -%}
                                   <span class="select-label" data-role="sort-title">
                                     {{- option.name | escape -}}
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
-                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                                      <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+                                    </svg>
+                                  </span>
                                 {%- endif -%}
                               {%- endfor -%}
                               <ul class="select-items" data-role="sort-options">
@@ -627,10 +786,16 @@
                         </ul>
                         {%- unless show_active_filter -%}
                           <style type="text/css">
-                            .active-filters.active-facets-desktop{display:none;}
+                            .active-filters.active-facets-desktop {
+                              display: none;
+                            }
                           </style>
                         {%- endunless -%}
-                        <a href="{{ collection.url }}?sort_by={{ current_sort_by }}" class="js-facet-remove" aria-label="{{- 'sections.collection_template.clear_all' | t -}}">
+                        <a
+                          href="{{ collection.url }}?sort_by={{ current_sort_by }}"
+                          class="js-facet-remove"
+                          aria-label="{{- 'sections.collection_template.clear_all' | t -}}"
+                        >
                           {{- 'sections.collection_template.clear_all' | t -}}
                         </a>
                       </div>
@@ -645,7 +810,10 @@
                   {%- for product in collection.products -%}
                     <div class="col product-box">
                       {%- assign product = all_products[section.settings.product_1] -%}
-                      {%- render 'product-card', product: product, product_image_ratio: section.settings.product_image_ratio -%}
+                      {%- render 'product-card',
+                        product: product,
+                        product_image_ratio: section.settings.product_image_ratio
+                      -%}
                     </div>
                   {%- endfor -%}
                 </div>

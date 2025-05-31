@@ -12,22 +12,16 @@
 {%- endcomment -%}
 
 {%- liquid
-  assign purchase_btn = false
   assign login_to_see = false
   if settings.enable_login_price == true and customer and settings.enable_catalog_mode == false
-    assign purchase_btn = true
     assign login_to_see = true
   elsif settings.enable_login_price == false and settings.enable_catalog_mode == false
-    assign purchase_btn = true
     assign login_to_see = true
   elsif settings.enable_catalog_mode == true and settings.enable_login_price == false
-    assign purchase_btn = false
     assign login_to_see = true
   elsif settings.enable_login_price == true and customer and settings.enable_catalog_mode == true
-    assign purchase_btn = false
     assign login_to_see = true
   elsif settings.enable_login_price == true and settings.enable_catalog_mode == true
-    assign purchase_btn = false
     assign login_to_see = false
   endif
 
@@ -197,7 +191,6 @@
               <input type="hidden" name="properties[_isPreorder]" value="Yes" autocomplete="off" readonly>
             {%- endif -%}
             {%- liquid
-              assign main_current_variant = product_card_product.selected_or_first_available_variant
               assign product_card_product_available = product_card_product.variants | where: 'available'
               if product_card_product.available == false
                 continue
@@ -220,7 +213,7 @@
                     {%- endif -%}
                     <option
                       value="{{ variants.id }}"
-                      data-image="{{ variants.featured_image | default: image | img_url: '350x' }}"
+                      data-image="{{ variants.featured_image | default: image | image_url: width: 350 }}"
                       data-price="{{ variants.price | money }}"
                       {% if selected %}
                         selected="true"
