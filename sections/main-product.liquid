@@ -1,18 +1,18 @@
-{{ 'product-detail.min.css' | asset_url | stylesheet_tag }}
+{{ 'product-detail.css' | asset_url | stylesheet_tag }}
 {%- liquid
-  assign section_id = section.id  
+  assign section_id = section.id
   assign variant_colors = settings.product_colors | strip_newlines | downcase | split: ','
   assign slides_per_view = 'auto'
   assign direction = 'vertical'
   if section.settings.product_gellery == 'slider-horizontal'
     assign direction = 'horizontal'
     assign slides_per_view = '5'
-  endif 
+  endif
   if section.settings.thumb_slider_placement == 'left' and section.settings.product_gellery == 'slider-vertical'
     assign thumb_slider = ' thumb-left'
   elsif section.settings.thumb_slider_placement == 'right' and section.settings.product_gellery == 'slider-vertical'
     assign thumb_slider = ' thumb-right'
-  endif 
+  endif
   assign group_image = section.settings.enable_variant_group
   assign product_options_downcased = product.selected_or_first_available_variant.options | downcase
 
@@ -21,29 +21,29 @@
   else
     assign seo_media = product.featured_media
   endif
--%} 
+-%}
 <section {% if section.settings.element_id != blank %} id="{{ section.settings.element_id }}"{% endif %} class="section-{{ section.id }} position-relative main-product-page product-page-{{ section.settings.product_page_style }} {{ section.settings.padding_top }} {{ section.settings.padding_bottom }}{% if section.settings.element_class != blank %} {{ section.settings.element_class }}{% endif %}{% if section.settings.section_bg_image != blank %} {{ section.settings.background_position }}{% endif %}{% unless section.settings.zoom_enabled == true %} zoom-disable{% endunless %}" style="{% if section.settings.section_bg_image != blank %}background-image: url({{ section.settings.section_bg_image | image_url }});{% elsif section.settings.section_bg_color != blank %}background-color: {{ section.settings.section_bg_color }};{% endif %}">
   <div class="{{ section.settings.container_type }}">
     <div class="product row">
       {%- if section.settings.product_page_style == 'style-2' -%}
         <div class="col-12 product-gallery{{ thumb_slider }}" id="product-gallery-{{ section.id }}" data-group-image="{{ section.settings.enable_variant_group }}">
           {%- render 'product-media-grid-column',
-            section_settings: section.settings, 
-            slider_veiw: slides_per_view, 
-            direction: direction, 
-            group_image: group_image, 
+            section_settings: section.settings,
+            slider_veiw: slides_per_view,
+            direction: direction,
+            group_image: group_image,
             section_id: section_id,
-            product_options_downcased: product_options_downcased  
+            product_options_downcased: product_options_downcased
           -%}
         </div>
         <div class="col-12 product-summary">
           {%- if section.settings.show_content_container == true -%}
           <div class="container">
-          {%- endif -%}  
+          {%- endif -%}
             <div class="row">
               {%- render 'product-information',
                 section_settings: section.settings,
-                variant_colors: variant_colors, 
+                variant_colors: variant_colors,
                 block: block,
                 section_id: section_id,
                 forloop_content: section.blocks
@@ -51,7 +51,7 @@
             </div>
           {%- if section.settings.show_content_container == true -%}
           </div>
-          {%- endif -%}  
+          {%- endif -%}
         </div>
       {%- else -%}
         {%- liquid
@@ -71,7 +71,7 @@
                 group_image: group_image,
                 section_id: section_id,
                 product_options_downcased: product_options_downcased
-              -%} 
+              -%}
             {%- elsif section.settings.product_gellery == 'grid-2-columns' or section.settings.product_gellery == 'grid-1-columns' or section.settings.product_gellery == 'combined-grid' -%}
               {%- render 'product-media-grid-column',
                 section_settings: section.settings,
@@ -83,22 +83,22 @@
               -%}
             {%- endif -%}
           </div>
-        </div>  
+        </div>
         <div class="col-lg-6 col-xl-5{% if section.settings.product_gellery == 'grid-2-columns' and section.settings.container_type != 'container' %} col-xxl-4{% endif %} product-summary">
           <div class="position-sticky" style="top: var(--top-space);">
             {%- render 'product-information',
               section_settings: section.settings,
-              variant_colors: variant_colors, 
+              variant_colors: variant_colors,
               block: block,
               section_id: section_id,
-              forloop_content: section.blocks 
+              forloop_content: section.blocks
             -%}
           </div>
         </div>
       {%- endif -%}
     </div>
   </div>
-  {%- render 'product-sticky-addtocart' -%}  
+  {%- render 'product-sticky-addtocart' -%}
 </section>
 {%- if section.settings.zoom_enabled == true -%}
 <script src="{{ 'jquery.zoom.js' | asset_url }}" defer="defer"></script>
@@ -135,8 +135,8 @@
   {%- for variant in product.variants -%}
     window._themeProducts[{{ product.id }}].variants[{{ forloop.index0 }}].inventory_quantity = {{ variant.inventory_quantity }};
   {%- endfor -%}
-  
-  
+
+
 </script>
 
 <script type="application/ld+json">
@@ -851,7 +851,7 @@
       "unit": "px",
       "label": "Gallery image border radius",
       "default": 0
-    },    
+    },
     {
       "type": "checkbox",
       "id": "zoom_enabled",

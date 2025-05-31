@@ -125,9 +125,6 @@
             >
               <span>{{ btn-text }}</span>
             </button>
-            {%- if section.settings.show_dynamic_checkout_btn -%}
-              {{ form | payment_button }}
-            {%- endif -%}
             {%- if section.settings.show_sticky_wishlist -%}
               {%- render 'button-wishlist', product: product, tooltip_position: 'top' -%}
             {%- endif -%}
