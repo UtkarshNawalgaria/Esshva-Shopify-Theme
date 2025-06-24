@@ -75,7 +75,7 @@
     {%- if settings.header_layout == 'style-2' -%}
       {{ 'header-style-2.min.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
-    {{ 'responsive.min.css' | asset_url | stylesheet_tag }}
+    {{ 'responsive.css' | asset_url | stylesheet_tag }}
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
     </script>
   </head>

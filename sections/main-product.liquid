@@ -118,25 +118,23 @@
 <script type="text/javascript">
     window._themeProducts = window._themeProducts || {}
     window.productPrice = '{{ product.selected_or_first_available_variant.price | money }}';
-  window._themeProducts[{{ product.id }}] = {
-    id: {{ product.id }},
-    title: {{ product.title | json }},
-    available: {{ product.available | json }},
-    handle: {{ product.handle | json }},
-    variants: {{ product.variants | json }},
-    options: {{ product.options_with_values | json }},
-    selected_or_first_available_variant: {{ product.selected_or_first_available_variant | json }},
-    media: {{ product.media | json }},
-    featured_image: {{ product.featured_image | json }},
-    aspect_ratio: {{ product.featured_image.aspect_ratio | json }},
-    images: {{ product.images | json }},
-    price: {{ product.price | json }},
-  };
-  {%- for variant in product.variants -%}
-    window._themeProducts[{{ product.id }}].variants[{{ forloop.index0 }}].inventory_quantity = {{ variant.inventory_quantity }};
-  {%- endfor -%}
-
-
+    window._themeProducts[{{ product.id }}] = {
+      id: {{ product.id }},
+      title: {{ product.title | json }},
+      available: {{ product.available | json }},
+      handle: {{ product.handle | json }},
+      variants: {{ product.variants | json }},
+      options: {{ product.options_with_values | json }},
+      selected_or_first_available_variant: {{ product.selected_or_first_available_variant | json }},
+      media: {{ product.media | json }},
+      featured_image: {{ product.featured_image | json }},
+      aspect_ratio: {{ product.featured_image.aspect_ratio | json }},
+      images: {{ product.images | json }},
+      price: {{ product.price | json }},
+    };
+    {%- for variant in product.variants -%}
+      window._themeProducts[{{ product.id }}].variants[{{ forloop.index0 }}].inventory_quantity = {{ variant.inventory_quantity }};
+    {%- endfor -%}
 </script>
 
 <script type="application/ld+json">

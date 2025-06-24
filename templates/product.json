@@ -11,6 +11,7 @@
   "sections": {
     "1643711855bc4aea40": {
       "type": "breadcrumb",
+      "disabled": true,
       "settings": {
         "container_type": "container",
         "banner_title_size": "h-3",
@@ -121,7 +122,7 @@
         "show_compare": false,
         "background_position": "cover-background",
         "section_bg_color": "",
-        "padding_top": "pt-0",
+        "padding_top": "very-small-section-top",
         "padding_bottom": "pb-0",
         "element_id": "",
         "element_class": ""

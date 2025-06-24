@@ -11556,3 +11556,12 @@ footer.style-3 .swiper .swiper-wrapper {
 .circle {
 	border-radius: 50%;
 }
+
+.shopify-payment-button .shopify-payment-button__button--unbranded:hover {
+	background-color: var(--base-color) !important;
+}
+
+.cart-notification-buttons-wrapper #form-minicart .btn:hover {
+	background-color: black;
+	color: white;
+}

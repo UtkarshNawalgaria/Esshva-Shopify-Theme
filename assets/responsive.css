@@ -3210,7 +3210,7 @@
 	}
 
 	.product-summary .cart-btn {
-		width: calc(100% - 63px)
+		width: 100%;
 	}
 
 	.product-summary .meta-right {

@@ -97,7 +97,8 @@
         "84f63979-a6cd-4e4a-a874-2406bbae5b6c": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Home_Page_Banner_1.webp",
+            "image": "shopify://shop_images/Banner_1.jpg",
+            "mobile_image": "shopify://shop_images/Banner_1_mobile_size.jpg",
             "title": "",
             "subtitle": "",
             "description": "",
@@ -116,8 +117,8 @@
         "item_wGq8nc": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Home_Page_Banner_2.webp",
-            "mobile_image": "shopify://shop_images/Website_Banner_Mobile_1.png",
+            "image": "shopify://shop_images/Banner_2.jpg",
+            "mobile_image": "shopify://shop_images/Banner_2_mobile_version.jpg",
             "title": "",
             "subtitle": "",
             "description": "",
@@ -332,6 +333,35 @@
         "section_class_name": ""
       }
     },
+    "1750767568338ee067": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_NYdX6K": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "#000000",
+            "title_size_v2": 24,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 100,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_NYdX6K"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "162755718668417b38": {
       "type": "icon-with-text",
       "blocks": {
@@ -427,6 +457,7 @@
     "1630664853e697c287",
     "featured_collection_9rga6x",
     "banner_image_REHjgp",
+    "1750767568338ee067",
     "162755718668417b38"
   ]
 }
