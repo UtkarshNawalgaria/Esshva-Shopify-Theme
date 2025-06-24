@@ -310,6 +310,21 @@
         "section_id": "",
         "section_class_name": ""
       }
+    },
+    "1750317444bb820450": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_hMrcTH": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_hMrcTH"
+      ],
+      "settings": {
+        "include_margins": false
+      }
     }
   },
   "order": [
@@ -317,6 +332,7 @@
     "main",
     "bought-together",
     "product-tabs",
+    "1750317444bb820450",
     "product-related",
     "product-upsell",
     "recent-viewed-products"
